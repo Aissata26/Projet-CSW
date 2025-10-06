@@ -6,6 +6,5 @@
     </head>
     <body>
         <p> Aissata La femme de ma vie</p>
-        <p>ZSEDRFGTHYJK</p>
     </body>
 </html>
