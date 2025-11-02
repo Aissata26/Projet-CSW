@@ -19,20 +19,23 @@ include_once 'header.php';
               connexion
           </a>
           <!-- Modal -->
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
-              <div class="modal-content ">
-                <div class="modal-header border-0">    
+              <div class="modal-content background ">
+                <div class="modal-header border-0 background0">    
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="row">
-                      <a class="navbar-brand text-light fw-bold fs-2" href="#">MOVE<span class="titre-color">UP</span></a>
+                <div class="row text-center">
+                  <a class="text-light fw-bold fs-2" href="#">MOVE<span class="titre-color">UP</span></a>
+                </div>
+                <div class="row text-center">
+                      <p class="text-light">Connectez-vous à votre compte</p>
                     </div>
                 <div class="modal-body">
                   <form>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
