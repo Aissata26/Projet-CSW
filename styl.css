@@ -1,0 +1,58 @@
+.background
+{
+    background-color: #0b1320 !important;
+   
+}
+.titre-color
+{
+    color: #1E40AF;
+}
+.dynamique:hover
+{
+   color: #4D9FFF !important;
+}
+.dynamique:focus
+{
+   color: #4D9FFF !important;
+}
+.btn-outline-primary
+{
+    background: linear-gradient(to bottom, #3B82F6, #1E404F);
+    border: none;  
+    outline: none !important;
+    box-shadow: none !important;
+    
+}
+.btn-outline-success
+{
+    background: linear-gradient(to bottom, #4B5563, #1F2937);
+    outline: none !important;
+    box-shadow: none !important;
+    border: none;
+}
+.bg 
+{
+    background-color: #131B2B;
+}
+.transparent-green
+{
+    background-color: rgb(25, 135, 84, 0.15) !important;
+}
+.transparent-bleu
+{
+    background-color: rgba(13, 110, 253, 0.15) !important;
+}
+a
+{
+     text-decoration: none !important;
+   
+}
+.btn-close.white
+{
+    filter: invert(1) brightness(200%)
+}
+.background0
+{
+    background-color:#1E40AF !important;
+   
+}
