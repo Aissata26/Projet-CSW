@@ -9,11 +9,11 @@ include_once 'header.php';
     </header>
     <main>
         <section class="background text-light">
-            <div class="container">
+            <div class="container justify-content-center align-items-center">
                 <div class="row py-5">
                     <div class="col-md-6 py-2">        
-                        <h1 class="fs-1 fw-bolder">DÉMÉNAGEZ EN TOUTE CONFIANCE</h1>
-                        <P class="fs-6">Trouvez les meilleurs déménageurs près de chez vous.</p>
+                        <h1 class="fs-1 fw-bolder text-light">DÉMÉNAGEZ EN TOUTE CONFIANCE</h1>
+                        <P class="fs-6 text-light">Trouvez les meilleurs déménageurs près de chez vous.</p>
                         <div class="d-flex gap-3 flex-nowrap">
                             <a href="#" class="btn btn-outline-primary no-outline rounded-1 text-light btn-lg ">Créer une demande</a>
                             <a href="#" class="btn btn-outline-success no-outline rounded-1 text-light btn-lg px-5">Voir les offres</a>

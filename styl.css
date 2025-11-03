@@ -69,4 +69,8 @@ a
 {
     background: #fffdd0;
 }
+.background--blanc-crem
+{
+background: linear-gradient(to bottom, #3B82F6, #1E404F) !important;
+}
 
