@@ -51,12 +51,30 @@ a
      text-decoration: none !important;
    
 }
-.btn-close.white
-{
-    filter: invert(1) brightness(200%)
-}
 .background0
 {
     background-color:#1E40AF !important;
    
 }
+.background-connexion
+{
+    background: linear-gradient(to  right ,#0f1f3a,#0a1628);
+}
+.text-couleur-blanc-creme 
+{
+    color: #fffdd0;
+    font-size: small;
+}
+.text-color-bleufoncé
+{
+    color:  #0b1320;
+}
+.background--blanc-creme
+{
+    background: #fffdd0;
+}
+.background--blanc-crem
+{
+background: linear-gradient(to bottom, #3B82F6, #1E404F) !important;
+}
+
