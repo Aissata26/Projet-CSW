@@ -7,8 +7,9 @@ include_once 'header.php';
         include_once 'nav.php'
         ?>
     </header>
+    <body class="background-A">
     <main>
-        <section class="background text-light">
+        <section class=" text-light">
             <div class="container">
                 <div class="row py-5">
                     <div class="col-md-6 py-2">        
@@ -25,7 +26,7 @@ include_once 'header.php';
                 </div>
             </dib>
         </section>
-        <section class="background p-4">
+        <section class=" p-4">
             <div class="container text-light bg">
                 <div class="row ">
                     <h2 class="text-center my-4">Comment ça mache</h2>
@@ -55,7 +56,7 @@ include_once 'header.php';
                 </div>
             </div>
         </section>
-        <section class="background py-4">
+        <section class=" py-4">
             <div class="container text-light ">
                 <div class="row">
                     <h2 class="text-center py-4">ANNONCES RÉCENTES</h2>
@@ -118,7 +119,7 @@ include_once 'header.php';
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-auto">
-                        <a href="#" class="btn btn-primary my-4 py-2">voire toutes les annonces</a>
+                        <a href="#" class="btn btn-primary my-4 py-2">voir toutes les annonces</a>
                     </div>
                 </div>
             </div>

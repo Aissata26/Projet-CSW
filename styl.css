@@ -1,7 +1,11 @@
+.background-A
+{
+    background: linear-gradient(to bottom, #010924, #021B49, #0A3C7D,#1c5ab1) !important;
+   
+}
 .background
 {
-    background-color: #0b1320 !important;
-   
+    background-color: #010a25 !important;
 }
 .titre-color
 {
