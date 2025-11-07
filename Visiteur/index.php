@@ -7,8 +7,8 @@ include_once 'header.php';
         include_once 'nav.php'
         ?>
     </header>
-    <main>
-        <section class="background text-light">
+    <main class="background-A">
+        <section class=" text-light">
             <div class="container justify-content-center align-items-center">
                 <div class="row py-5">
                     <div class="col-md-6 py-2">        
@@ -25,7 +25,7 @@ include_once 'header.php';
                 </div>
             </dib>
         </section>
-        <section class="background p-4">
+        <section class=" p-4">
             <div class="container text-light bg">
                 <div class="row ">
                     <h2 class="text-center my-4">Comment ça mache</h2>
@@ -55,7 +55,7 @@ include_once 'header.php';
                 </div>
             </div>
         </section>
-        <section class="background py-4">
+        <section class=" py-4">
             <div class="container text-light ">
                 <div class="row">
                     <h2 class="text-center py-4">ANNONCES RÉCENTES</h2>
