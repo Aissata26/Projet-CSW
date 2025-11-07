@@ -1,6 +1,6 @@
 <?php 
 include_once 'header.php';
-include_once 'fonction.php';
+include_once '../fonction.php';
 ?>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark background">

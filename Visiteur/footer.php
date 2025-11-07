@@ -26,9 +26,9 @@ include_once'header.php';
         </div>
         <div class="row align-items-center border-top border-secondary justify-content-center text-center p-4">
             <div class="col-md-3 col-12 ">
-                <a href="#" ><img src="photo/photoe.png" alt="twitter"></a>
-                <a href="#" ><img src="photo/photog.png" alt="intagram"></a>
-                <a href="#" ><img src="photo/photoh.png" alt="facebook"></a>
+                <a href="#" ><img src="../photo/photoe.png" alt="twitter"></a>
+                <a href="#" ><img src="../photo/photog.png" alt="intagram"></a>
+                <a href="#" ><img src="../photo/photoh.png" alt="facebook"></a>
             </div>
             <div class="col-md-6 col-12">
                 <a href="#" class="text-secondary">Mentions légales </a>

@@ -20,7 +20,7 @@ include_once 'header.php';
                         </div>
                     </div>
                     <div class="col-md-6 py-4">
-                        <img src="photo/photoc.png" alt="photo de camion" class="img-fluid">
+                        <img src="../photo/photoc.png" alt="photo de camion" class="img-fluid">
                     </div>
                 </div>
             </dib>
@@ -40,14 +40,14 @@ include_once 'header.php';
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="text-center my-2">
-                            <img src="photo/photob.png" alt="proposition">
+                            <img src="../photo/photob.png" alt="proposition">
                         </div>
                         <p class="text-center">2.Recevez des propositions</p>
                         <p class="text-center">Comparez les offres des déménageurs.</p>
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="text-center my-2">
-                            <img src="photo/photof.png" alt="validation">
+                            <img src="../photo/photof.png" alt="validation">
                         </div>
                         <p class="text-center">3.Choisissez vos déménageurs</p>
                         <p class="text-center">Sélectionnez des pesonnes de confiance.<p>
