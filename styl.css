@@ -5,7 +5,7 @@
 }
 .background-B
 {
-    background: linear-gradient(to top, #010924, #011735,#010924) !important;
+    background: linear-gradient(180deg, #010925, #021536,#030d2b) !important;
    
 }
 .background
@@ -97,5 +97,12 @@ background: linear-gradient(to bottom, #3B82F6, #1E404F) !important;
 .padding
 {
     margin-bottom: 15%;
+}
+h2 
+{
+    color: #274690;
+    font-weight: 750;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
