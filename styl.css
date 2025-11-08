@@ -1,6 +1,11 @@
 .background-A
 {
-    background: linear-gradient(to bottom, #010924, #021B49, #0A3C7D,#1c5ab1) !important;
+    background: linear-gradient(to top, #010924, #021B49, #0A3C7D,#010924) !important;
+   
+}
+.background-B
+{
+    background: linear-gradient(180deg, #010925, #021536,#030d2b) !important;
    
 }
 .background
@@ -76,5 +81,28 @@ a
 .background--blanc-crem
 {
 background: linear-gradient(to bottom, #3B82F6, #1E404F) !important;
+}
+.border-black
+{
+    border-color: #000 !important;
+}
+.w
+{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.padding
+{
+    margin-bottom: 15%;
+}
+h2 
+{
+    color: #274690;
+    font-weight: 750;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
