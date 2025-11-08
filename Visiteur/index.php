@@ -33,7 +33,7 @@ include_once 'header.php';
                 <div class="row ">
                     <div class="col-12 col-md-4">
                         <div class="text-center my-2">
-                            <img src="photo/photoa.png" alt="message">
+                            <img src="../photo/photoa.png" alt="message">
                         </div>
                         <p class="text-center">1.créez une annonce</p>
                         <p class="text-center">Définissez les détails de votre déménagement.</p>

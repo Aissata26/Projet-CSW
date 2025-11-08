@@ -68,7 +68,7 @@ include_once 'nav1.php';
           </div>
 
           <!-- ÉTAPE 2 -->
-          <div class="carousel-item ">
+          <div class="carousel-item">
             <div class="container my-5">
               <div class="row">
                 <div class="col-8">
@@ -190,7 +190,7 @@ include_once 'nav1.php';
           </div>
 
           <!-- ÉTAPE 3 -->
-          <div class="carousel-item ">
+          <div class="carousel-item">
             <div class="container my-5">
               <div class="row">
                 <div class="col-8">
