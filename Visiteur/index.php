@@ -124,7 +124,7 @@ include_once 'header.php';
             </div>
         </section>
     </main>
-    <?php include_once 'footer.php'?>
+    <?php include_once 'footer.php'?>      
 </body>
                     
         
