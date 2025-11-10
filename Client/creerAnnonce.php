@@ -5,10 +5,10 @@ include_once 'nav1.php';
 <body class="background-B">
   <section class="bg-light w mt-4">
     <form>
-      <div id="carouselExample" class="carousel slide" data-bs-interval="false" data-bs-touch="false" data-bs-keyboard="false">
+      <div id="carouselExample" class="carousel slide" >
         <div class="carousel-inner">
 
-          <!-- ÉTAPE 1-->
+          
           <div class="carousel-item ">
             <div class="container my-5">
               <div class="row">
@@ -67,8 +67,8 @@ include_once 'nav1.php';
             </div>
           </div>
 
-          <!-- ÉTAPE 2 -->
-          <div class="carousel-item">
+          
+          <div class="carousel-item ">
             <div class="container my-5">
               <div class="row">
                 <div class="col-8">
@@ -189,8 +189,8 @@ include_once 'nav1.php';
             </div>
           </div>
 
-          <!-- ÉTAPE 3 -->
-          <div class="carousel-item">
+          
+          <div class="carousel-item ">
             <div class="container my-5">
               <div class="row">
                 <div class="col-8">
@@ -241,7 +241,7 @@ include_once 'nav1.php';
             </div>
           </div>
 
-          <!--ÉTAPE 4-->
+          <
           <div class="carousel-item active">
             <div class="container my-5">
               <div class="row">
@@ -282,6 +282,14 @@ include_once 'nav1.php';
           </div>
 
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </form>
   </section>

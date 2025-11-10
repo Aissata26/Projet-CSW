@@ -4,7 +4,7 @@ function connexion_base_de_donnee()
 {
     try
     {
-        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","");
+        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","root");
     }
     catch(Exception $e)
     {
