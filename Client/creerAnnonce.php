@@ -241,7 +241,7 @@ include_once 'nav1.php';
             </div>
           </div>
 
-          <
+    
           <div class="carousel-item active">
             <div class="container my-5">
               <div class="row">
