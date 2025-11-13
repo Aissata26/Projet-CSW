@@ -61,7 +61,7 @@ function get_utilisateur()
 }
  }
  form_connexion();
-      
+
   
      
 
@@ -96,13 +96,59 @@ function connexion ()
                             <button type="submit" class="btn btn-primary">Connexion</button></div>
                         </form>
                         <div class="text-center text-light border-top p-3">
-                            <p class="">Pas encore de compte ? <a href="#">Créer un compte</p>
+                            <p class="">Pas encore de compte ? <a href="#">Créer un compte</a></p>
                         </div>
                     </div>  
                 </div>
             </div>
         </div>';
 }connexion();
-
+function inscription()
+{
+    echo'<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content  background--blanc-crem text-center border-0">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="row text-center">
+        <h1 class="text-color-bleufoncé fs-2">Inscription</h1>
+      </div>
+      <div class="row text-center">
+        <p class="text-couleur-blanc-creme">Remplissez le formulaire ci-dessous pour créer votre compte</p>
+      </div>
+      <div class="modal-body">
+        <form class="justify-content-center"  method="POST" action="fonction.php">
+          <div class="mb-3 text-start">
+            <label for="text1" class="form-label fs-5 text-light">Nom</label>
+            <input type="text" class="form-control" id="text1" aria-label="default input example" name="nom" placeholder="DIALLO">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="text2" class="form-label fs-5 text-light">Prenom</label>
+            <input type="text" class="form-control" aria-label="default input example" id="text2" name="prenom" placeholder="Aissata">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="exampleFormControlInput1" class="form-label text-light fs-5 ">Address Email</label>
+            <input type="email" class="form-control " id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="inputPassword" class="form-label fs-5  text-light">Mot de passe</label>
+            <input type="password" class="form-control" id="inputPassword" name="motdepasse" placeholder="*********">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="inputPassword1" class="form-label fs-5  text-light">Confirmé mot de passe</label>
+            <input type="password" class="form-control" id="inputPassword1" name="motdepasse1" placeholder="*********">
+          </div>
+          <button type="submit" class="btn btn-primary">Connexion</button></div>
+        </form>
+        <div class="text-center text-light border-top p-3">
+          <p class="">Vous avez déjà un compte? <a href="#">Se connecter</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>';
+}
+inscription();
 
 ?>

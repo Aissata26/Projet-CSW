@@ -21,46 +21,10 @@ include_once '../fonction.php';
           </a>
         </li>
         <li class="nav-item ">
-          <!-- Button trigger modal -->
+          <!-- link -->
           <a  class="nav-link mx-lg-5 text-light dynamique" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-  Inscription
-</a>
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content  background--blanc-crem text-center">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="row text-center">
-        <h1 class="text-color-bleufoncé fs-2">Inscription</h1>
-      </div>
-      <div class="row text-center">
-        <p class="text-couleur-blanc-creme">Remplissez le formulaire ci-dessous pour créer votre compte</p>
-      </div>
-      <div class="modal-body">
-        <form class="justify-content-center"  method="POST" action="fonction.php">
-          <div class="mb-3">
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Votre@email.com">
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="*********">
-          </div>
-          <div class="text-end">
-            <a href="#" >Mot de passe oublié?</a>
-          </div>
-          <button type="submit" class="btn btn-primary">Connexion</button></div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+           Inscription
+          </a>
         </li>
       </ul>   
     </div>
