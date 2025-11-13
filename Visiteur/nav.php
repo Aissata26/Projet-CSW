@@ -21,46 +21,51 @@ include_once '../fonction.php';
           </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link mx-lg-5 text-light dynamique" href="#" >
-            Inscription
-          </a>
+          <!-- Button trigger modal -->
+          <a  class="nav-link mx-lg-5 text-light dynamique" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+  Inscription
+</a>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content  background--blanc-crem text-center">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="row text-center">
+        <h1 class="text-color-bleufoncé fs-2">Inscription</h1>
+      </div>
+      <div class="row text-center">
+        <p class="text-couleur-blanc-creme">Remplissez le formulaire ci-dessous pour créer votre compte</p>
+      </div>
+      <div class="modal-body">
+        <form class="justify-content-center"  method="POST" action="fonction.php">
+          <div class="mb-3">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Votre@email.com">
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="*********">
+          </div>
+          <div class="text-end">
+            <a href="#" >Mot de passe oublié?</a>
+          </div>
+          <button type="submit" class="btn btn-primary">Connexion</button></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
         </li>
       </ul>   
     </div>
   </div>
 </nav>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<div class="modal fade  " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content background--blanc-crem border-0  text-center">
-                    <div class="modal-header border-0">    
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="row text-center">
-                        <h1 class="text-color-bleufoncé fs-2">Connexion</h1>
-                    </div>
-                    <div class="row text-center">
-                        <p class="text-couleur-blanc-creme">Connectez-vous à votre compte</p>
-                    </div>
-                    <div class="modal-body">
-                        <form class="justify-content-center"  method="POST" action="../fonction.php">
-                            <div class="mb-3">
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Votre@email.com">
-                            </div>
-                            <div class="mb-3">
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="*********">
-                            </div>
-                            <div class="text-end">
-                                <a href="#" >Mot de passe oublié?</a>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Connexion</button></div>
-                        </form>
-                        <div class="text-center text-light border-top p-3">
-                            <p class="">Pas encore de compte ? <a href="#">Créer un compte</p>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-        </div>
 </body>
 

@@ -2,7 +2,7 @@
     try
     {
 
-        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","root");
+        $pdo= new PDO("mysql:host=localhost;dbname=bdd_7_13","root","");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 
     }
@@ -19,7 +19,8 @@ function get_utilisateur()
     return $utilisateurs;
 
 }
-
+ function form_connexion()
+ {
     $utilisateurs=get_utilisateur();
    if ( isset($_POST['email']) && isset($_POST['password']) )
    {
@@ -58,12 +59,14 @@ function get_utilisateur()
       }
     }
 }
+ }
+ form_connexion();
       
   
      
 
 
-/*function connexion ()
+function connexion ()
 {
        echo ' <div class="modal fade  " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -99,7 +102,7 @@ function get_utilisateur()
                 </div>
             </div>
         </div>';
-}*/
+}connexion();
 
 
 ?>
