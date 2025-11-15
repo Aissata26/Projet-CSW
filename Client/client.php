@@ -7,7 +7,7 @@ include_once 'nav.php';
     <div class="row">
       <h2 class="text-center text-light py-4">MES ANNONCES</h2>
     </div>
-    <div class="card mb-3 shadow-sm bg-light">
+    <div class="card mb-3 bg-light">
       <div class="card-body">
         <h5 class="card-title fw-bold mb-2">
           Déménagement Rouen → Paris
