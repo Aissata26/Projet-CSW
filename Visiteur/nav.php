@@ -1,7 +1,12 @@
 <?php 
+session_start();
 include_once 'header.php';
 include_once '../fonction.php';
+ $message1="";
 ?>
+ <?php 
+  traitement_con();
+ ?> 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark background">
     <div class="container-fluid">
@@ -16,7 +21,7 @@ include_once '../fonction.php';
         </li>
         <li class="nav-item">
           <!-- link -->
-          <a  href="#"class="mx-lg-5 text-light dynamique nav-link " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <a  href="#"class="mx-lg-5 text-light dynamique nav-link active" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               connexion 
           </a>
         </li>
@@ -30,6 +35,99 @@ include_once '../fonction.php';
     </div>
   </div>
 </nav>
+<!-- modal connexion -->
+<div class="modal fade  " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content background--blanc-crem border-0  text-center">
+                    <div class="modal-header border-0">    
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="row text-center">
+                        <h1 class="text-color-bleufoncé fs-2">Connexion</h1>
+                    </div>
+                    <div class="row text-center">
+                        <p class="text-couleur-blanc-creme">Connectez-vous à votre compte</p>
+                    </div>
+                    <div class="modal-body">
+                        <form class="justify-content-center"  method="POST" action="../fonction.php">
+                            <div class="mb-3 text-start text-danger">
+                               <p id="mes"><?php if(isset($_SESSION['erreur'])){echo $_SESSION['erreur'];}?></p>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Votre@email.com">
+                            </div>
+                            <div class="mb-3 ">
+                                <input type="password" class="form-control" id="pwd" name="password" placeholder="*********">
+                            </div>
+                            <div class="text-end">
+                                <a href="#" >Mot de passe oublié?</a>
+                            </div>
+                              <button type="submit" class="btn btn-primary" name="connexion" id="connexion">Connexion</button>
+                            </div>
+                        </form>
+                        <div class="text-center text-light border-top p-3">
+                            <p class="">Pas encore de compte ? <a href="#">Créer un compte</a></p>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <!-- modal inscription -->
+        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content  background--blanc-crem text-center border-0">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="row text-center">
+        <h1 class="text-color-bleufoncé fs-2">Inscription</h1>
+      </div>
+      <div class="row text-center">
+        <p class="text-couleur-blanc-creme">Remplissez le formulaire ci-dessous pour créer votre compte</p>
+      </div>
+      <div class="modal-body">
+        <form class="justify-content-center"  method="POST" action="../fonction.php">
+          <div class="mb-3 text-start">
+            <label for="text1" class="form-label fs-5 text-light">Nom</label>
+            <input type="text" class="form-control" id="text1" aria-label="default input example" name="nom" placeholder="DIALLO">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="text2" class="form-label fs-5 text-light">Prenom</label>
+            <input type="text" class="form-control" aria-label="default input example" id="text2" name="prenom" placeholder="Aissata">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="exampleFormControlInput1" class="form-label text-light fs-5 ">Address Email</label>
+            <input type="email" class="form-control " id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="catégorie" class="form-label text-light fs-5 ">Catégorie</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>--</option>
+              <option value="1">Client</option>
+              <option value="2">Déménageur</option>
+            </select>
+          </div>
+          <div class="mb-3 text-start">
+            <label for="inputPassword" class="form-label fs-5  text-light">Mot de passe</label>
+            <input type="password" class="form-control" id="inputPassword" name="motdepasse" placeholder="*********">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="inputPassword1" class="form-label fs-5  text-light">Confirmé mot de passe</label>
+            <input type="password" class="form-control" id="inputPassword1" name="motdepasse1" placeholder="*********">
+          </div>
+          <button type="submit" class="btn btn-primary">Inscription</button></div>
+        </form>
+        <div class="text-center text-light border-top p-3">
+          <p class="">Vous avez déjà un compte? <a href="#">Se connecter</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
 
+</body>
+<?php if(isset($_SESSION['erreur'])) { ?>
+<script>
+    var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+    myModal.show();
+</script>
+<?php unset($_SESSION['erreur']); } ?>
