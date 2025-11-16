@@ -17,6 +17,15 @@ include_once 'nav.php';
           <strong>Date :</strong> 15 mars 2025
           <span class="text-muted"> | Statut : En ligne</span>
         </p>
+         <p class="card-text mb-1">
+            <strong>Départ :</strong> Appartement, 3ᵉ étage, avec ascenseur – Rouen
+        </p>
+        <p class="card-text mb-2">
+            <strong>Arrivée :</strong> Maison, RDC – Paris
+        </p>
+        <p class="card-text mb-3">
+            <strong>Volume estimé :</strong> 12 m³
+        </p>
         <p class="mb-0"><strong>1 proposition reçue</strong></p>
         <div class="d-flex justify-content-end gap-2 border-top pt-3 mt-3">
           <a href="#" class="btn btn-outline-secondary btn-sm">Voir les détails</a>
