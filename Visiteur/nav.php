@@ -52,7 +52,7 @@ include_once '../fonction.php';
                     <div class="modal-body">
                         <form class="justify-content-center"  method="POST" action="../fonction.php">
                             <div class="mb-3 text-start text-danger">
-                               <p id="mes"><?php if(isset($_SESSION['erreur'])){echo $_SESSION['erreur'];}?></p>
+                               <p id="mes"><?php if(isset($_SESSION['erreur'])){echo $_SESSION['erreur'];}?><?php if(isset($_SESSION['success'])){echo $_SESSION['success'];}?></p>
                                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Votre@email.com">
                             </div>
                             <div class="mb-3 ">
@@ -106,9 +106,14 @@ include_once '../fonction.php';
           <div class="mb-3 text-start">
             <label for="catégorie" class="form-label text-light fs-5 ">Catégorie</label>
             <select class="form-select" aria-label="Default select example" name="categorie">
+              <option>---</option>
               <option value="1" <?php if(isset($_SESSION['categorie'])){if($_SESSION['categorie']==='Client'){echo 'selected';}}?>>Client</option>
               <option value="2" <?php if(isset($_SESSION['categorie'])){if($_SESSION['categorie']==='Déménagement'){echo 'selected';}}?>>Déménageur</option>
             </select>
+          </div>
+          <div class="mb-3 text-start">
+            <label for="telephone" class="form-label text-light fs-5 ">telephone</label>
+            <input type="number" class="form-control " placeholder="000000000" name="telephone" value="<?php if(isset($_SESSION['telephone'])){echo $_SESSION['telephone'];}?>">
           </div>
           <div class="mb-3 text-start">
             <label for="inputPassword" class="form-label fs-5  text-light">Mot de passe</label>
@@ -147,4 +152,4 @@ include_once '../fonction.php';
     var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
     myModal.show();
 </script>
-<?php unset($_SESSION['erreur']); } ?>
+<?php unset($_SESSION['success']); } ?>

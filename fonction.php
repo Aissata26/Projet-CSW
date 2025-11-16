@@ -7,7 +7,7 @@ $script;
     try
     {
 
-        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","root");
+        $pdo= new PDO("mysql:host=localhost;dbname=bdd_7_13","root","");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 
     }
@@ -86,12 +86,19 @@ function traitement_ins()
         $prenom=strip_tags($_POST['prenom']);
         $anniversaire=strip_tags($_POST['anniverssaire']);
         $email=strip_tags($_POST['email']);
-        $categorie=strip_tags($_POST['categorie']);
+        if(strip_tags($_POST['categorie'])===1)
+        {
+          $categorie=Client;
+        }
+        else
+        {
+          $categorie=Déménageur;
+        }
         $motdepasse=strip_tags($_POST['motdepasse']);
         $telephone=strip_tags($_POST['telephone']);
         $chiffrement=password_hash($motdepasse,PASSWORD_BCRYPT);
         add_utilisateur($nom,$prenom,$email,$chiffrement,$categorie,$telephone,$anniversaire);
-        $_SESSION['success']="inscription réeussis";
+        $_SESSION['success']=réussis;
         header("location: Visiteur/index.php");
         
 
@@ -104,6 +111,7 @@ function traitement_ins()
       $_SESSION['prenom']=$_POST['prenom'];
       $_SESSION['anniverssaire']=$_POST['anniverssaire'];
       $_SESSION['email']=$_POST['email'];
+      $_SESSION['telephone']=$_POST['telephone'];
       $_SESSION['categorie']=$_POST['categorie'];
       
       header("location: Visiteur/index.php");
