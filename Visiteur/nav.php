@@ -1,11 +1,12 @@
 <?php 
-session_start();
+  session_start();
 include_once 'header.php';
 include_once '../fonction.php';
  $message1="";
 ?>
  <?php 
   traitement_con();
+ 
  ?> 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark background">
@@ -72,7 +73,7 @@ include_once '../fonction.php';
         </div>
         <!-- modal inscription -->
         <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+        <div class="modal-dialog">
     <div class="modal-content  background--blanc-crem text-center border-0">
       <div class="modal-header border-0">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -86,23 +87,27 @@ include_once '../fonction.php';
       <div class="modal-body">
         <form class="justify-content-center"  method="POST" action="../fonction.php">
           <div class="mb-3 text-start">
+            <p class="text-danger"><?php if(isset($_SESSION['erreur1'])){echo $_SESSION['erreur1'];}?></p>
             <label for="text1" class="form-label fs-5 text-light">Nom</label>
-            <input type="text" class="form-control" id="text1" aria-label="default input example" name="nom" placeholder="DIALLO">
+            <input type="text" class="form-control" id="text1" aria-label="default input example" name="nom" placeholder="DIALLO" value="<?php if(isset($_SESSION['nom'])){echo $_SESSION['nom'];}?>">
           </div>
           <div class="mb-3 text-start">
             <label for="text2" class="form-label fs-5 text-light">Prenom</label>
-            <input type="text" class="form-control" aria-label="default input example" id="text2" name="prenom" placeholder="Aissata">
+            <input type="text" class="form-control" aria-label="default input example" id="text2" name="prenom" placeholder="Aissata" value="<?php if(isset($_SESSION['prenom'])){echo $_SESSION['prenom'];}?>">
+          </div>
+          <div class="mb-3 text-start">
+            <label for="text3" class="form-label fs-5 text-light">Date de naissance</label>
+            <input type="date" class="form-control" aria-label="default input example" id="text3" name="anniverssaire" placeholder="2000/01/01" value="<?php if(isset($_SESSION['anniverssaire'])){echo $_SESSION['anniverssaire'];}?>">
           </div>
           <div class="mb-3 text-start">
             <label for="exampleFormControlInput1" class="form-label text-light fs-5 ">Address Email</label>
-            <input type="email" class="form-control " id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+            <input type="email" class="form-control " id="exampleFormControlInput1" placeholder="name@example.com" name="email" value="<?php if(isset($_SESSION['email'])){echo $_SESSION['email'];}?>">
           </div>
           <div class="mb-3 text-start">
             <label for="catégorie" class="form-label text-light fs-5 ">Catégorie</label>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>--</option>
-              <option value="1">Client</option>
-              <option value="2">Déménageur</option>
+            <select class="form-select" aria-label="Default select example" name="categorie">
+              <option value="1" <?php if(isset($_SESSION['categorie'])){if($_SESSION['categorie']==='Client'){echo 'selected';}}?>>Client</option>
+              <option value="2" <?php if(isset($_SESSION['categorie'])){if($_SESSION['categorie']==='Déménagement'){echo 'selected';}}?>>Déménageur</option>
             </select>
           </div>
           <div class="mb-3 text-start">
@@ -113,7 +118,7 @@ include_once '../fonction.php';
             <label for="inputPassword1" class="form-label fs-5  text-light">Confirmé mot de passe</label>
             <input type="password" class="form-control" id="inputPassword1" name="motdepasse1" placeholder="*********">
           </div>
-          <button type="submit" class="btn btn-primary">Inscription</button></div>
+          <button type="submit" class="btn btn-primary" name="inscription">Inscription</button></div>
         </form>
         <div class="text-center text-light border-top p-3">
           <p class="">Vous avez déjà un compte? <a href="#">Se connecter</a></p>
@@ -126,6 +131,18 @@ include_once '../fonction.php';
 
 </body>
 <?php if(isset($_SESSION['erreur'])) { ?>
+<script>
+    var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+    myModal.show();
+</script>
+<?php unset($_SESSION['erreur']); } ?>
+<?php if(isset($_SESSION['erreur1'])) { ?>
+<script>
+    var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop1'));
+    myModal.show();
+</script>
+<?php unset($_SESSION['erreur1']); } ?>
+<?php if(isset($_SESSION['success'])) { ?>
 <script>
     var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
     myModal.show();
