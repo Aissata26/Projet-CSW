@@ -3,7 +3,6 @@ session_start();
 include_once '../Visiteur/header.php';
 include_once '../fonction.php';
 include_once 'nav1.php';
-control_form_ann();
 ?>
 <body class="background-A">
 
@@ -13,7 +12,7 @@ control_form_ann();
 
         <section class="bg-light p-3 rounded">
 
-          <form>
+          <form methode="POST" action="../fonction.php">
             <div id="carouselExample" class="carousel slide carousel-fade">
               <div class="carousel-inner">
 
@@ -22,7 +21,7 @@ control_form_ann();
                     <div class="row justify-content-center">
                       <div class="col-12 col-lg-9">
                         <div class="row ">
-                          <div class="col-1 border border-2 border-primary rounded-circle ">
+                          <div class="col-1 border border-2 border-primary rounded-pill  ">
                             <p class="border rounded-circle text-center border-black mt-3 ">1</p>
                           </div>
                           <div class="col-1">
@@ -40,6 +39,7 @@ control_form_ann();
                           <div class="col-1 p-0">
                             <p class="text-center text-secondary  mt-3 ">›</p>
                           </div>
+                          sabotage
                           <div class="col-1">
                             <p class="border rounded-circle text-center border-black  mt-3 ">4</p>
                           </div>
@@ -50,37 +50,40 @@ control_form_ann();
                     <div>
                       <h2 class="text-center mt-4 titre-color me-5">Informations générales</h2>
                     </div>
-
+                    <form methode="POST" action="">
                     <div class="mb-3">
                       <label for="titre1" class="form-label">Titre de l’annonce</label>
-                      <input type="text" class="form-control" id="titre1" placeholder="Déménagement T2 Rouen → Paris">
+                      <input type="text" class="form-control" id="titre1" name="ta" placeholder="Déménagement T2 Rouen → Paris">
                     </div>
 
                     <div class="mb-3">
                       <label for="desc1" class="form-label">Description rapide</label>
-                      <textarea class="form-control" id="desc1" rows="3" placeholder="Ex. Appartement T2, meubles, électroménager."></textarea>
+                      <textarea class="form-control" id="desc1" rows="3"  name="dr" placeholder="Ex. Appartement T2, meubles, électroménager."></textarea>
                     </div>
+
 
                     <div class="row mb-3">
                       <div class="col-12 col-md-4">
                         <label for="nb_demenageurs" class="form-label">Nombres de déménageurs</label>
-                        <input type="number" class="form-control" id="nb_demenageurs" min="1" placeholder="1">
+                        <input type="number" class="form-control" id="nb_demenageurs" name="nbs" min="1" placeholder="1">
                       </div>
 
                       <div class="col-12 col-md-4">
                         <label for="date1" class="form-label">Date</label>
-                        <input type="date" class="form-control padding" id="date1">
+                      <input type="date" class="form-control padding" name="dd" id="date1">
+                        <input type="date" class="form-control padding"  id="date1">
                       </div>
 
                       <div class="col-12 col-md-4">
                         <label for="heure1" class="form-label">Heure</label>
-                        <input type="time" class="form-control padding" id="heure1">
+                        <input type="time" class="form-control padding" name="hd" id="heure1">
                       </div>
                     </div>
 
                     <div class="d-flex justify-content-end mt-4">
-                      <button type="button" class="btn btn-primary" data-bs-target="#carouselExample" data-bs-slide="next">Suivant</button>
+                      <button type="submit" class="btn btn-primary" data-bs-target="#carouselExample" data-bs-slide="next">Suivant</button>
                     </div>
+                    </form>
                   </div>
                 </div>
 
