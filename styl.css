@@ -5,7 +5,12 @@
 }
 .background-B
 {
-    background: linear-gradient(180deg, #010925, #021536,#030d2b) !important;
+    background: linear-gradient(to bottom, #010924, #021B49, #01234e) !important;
+   
+}
+.background-C
+{
+    background: linear-gradient(to top, #010924, #021B49, #01234e) !important;
    
 }
 .background
@@ -105,4 +110,25 @@ h2
     text-align: center;
     margin-bottom: 2rem;
 }
-
+.form-box
+{
+    height: 70vh;
+    max-height:70vh;
+    display:flex;
+    flex-direction:column;
+}
+.form-box-content
+{
+    flex:1;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+.stepper-sticky
+{
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}

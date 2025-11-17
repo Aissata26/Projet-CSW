@@ -5,7 +5,7 @@ include_once '../fonction.php';
 include_once 'nav1.php';
 control_form_ann();
 ?>
-<body class="background-B">
+<body class="background-A">
 
   <div class="container mt-4">
     <div class="row justify-content-center">
@@ -48,7 +48,7 @@ control_form_ann();
                     </div>
 
                     <div>
-                      <h2 class="h2 p-5">Informations générales</h2>
+                      <h2 class="text-center mt-4 titre-color me-5">Informations générales</h2>
                     </div>
 
                     <div class="mb-3">
@@ -61,19 +61,21 @@ control_form_ann();
                       <textarea class="form-control" id="desc1" rows="3" placeholder="Ex. Appartement T2, meubles, électroménager."></textarea>
                     </div>
 
-                    <div class="mb-3">
-                      <label for="nb_demenageurs" class="form-label">Nombre de déménageurs souhaités</label>
-                      <input type="number" class="form-control" id="nb_demenageurs"  min="1" placeholder="1">
-                    </div>
+                    <div class="row mb-3">
+                      <div class="col-12 col-md-4">
+                        <label for="nb_demenageurs" class="form-label">Nombres de déménageurs</label>
+                        <input type="number" class="form-control" id="nb_demenageurs" min="1" placeholder="1">
+                      </div>
 
-                    <div class="mb-3">
-                      <label for="date1" class="form-label">Date de Déménagement</label>
-                      <input type="date" class="form-control padding" id="date1">
-                    </div>
+                      <div class="col-12 col-md-4">
+                        <label for="date1" class="form-label">Date</label>
+                        <input type="date" class="form-control padding" id="date1">
+                      </div>
 
-                    <div class="mb-3">
-                      <label for="heure1" class="form-label">Heure de début</label>
-                      <input type="time" class="form-control padding" id="heure1">
+                      <div class="col-12 col-md-4">
+                        <label for="heure1" class="form-label">Heure</label>
+                        <input type="time" class="form-control padding" id="heure1">
+                      </div>
                     </div>
 
                     <div class="d-flex justify-content-end mt-4">
@@ -243,13 +245,13 @@ control_form_ann();
                     </div>
 
                     <div class="mb-3">
-                      <label for="photos" class="form-label">Ajouter des photos (facultatif)</label>
-                      <input type="file" class="form-control" id="photos" multiple>
+                      <label for="objets" class="form-label">Objets principaux </label>
+                      <textarea id="objets" class="form-control" rows="4" placeholder="Ex. lit, canapé, frigo, 20 cartons..."></textarea>
                     </div>
 
                     <div class="mb-3">
-                      <label for="objets" class="form-label">Objets principaux (facultatif)</label>
-                      <textarea id="objets" class="form-control" rows="4" placeholder="Ex. lit 140, canapé, frigo, 20 cartons..."></textarea>
+                      <label for="photos" class="form-label">Ajouter des photos </label>
+                      <input type="file" class="form-control" id="photos" multiple>
                     </div>
 
                     <div class="d-flex justify-content-between mt-4">
@@ -293,46 +295,80 @@ control_form_ann();
                       <h2 class="text-center mt-4 titre-color me-5">Récapitulatif</h2>
                     </div>
                     
-                    <div class="mb-3 p-3 border rounded bg-white">
-                      <h5 class="mb-3">Informations générales</h5>
-
-                      <p><strong>Titre :</strong> Déménagement T2 Rouen → Paris</p>
-                      <p><strong>Description :</strong> Appartement T2, meubles, électroménager…</p>
-                      <p><strong>Nombre de déménageurs :</strong> 2</p>
-                      <p><strong>Date :</strong> 15 mars 2025</p>
-                      <p><strong>Heure :</strong> 09:00</p>
+                     <div class="mb-4 p-3 border rounded bg-white">
+                <h5 class="mb-3">Informations générales</h5>
+                <p class="mb-1">
+                    <strong>Titre :</strong> Déménagement T2 Rouen → Paris
+                </p>
+                <p class="mb-1">
+                     <strong>Description :</strong> Appartement T2, meubles, électroménager…
+                </p>
+                <p class="mb-1">
+                    <strong>Nombre de déménageurs souhaités :</strong> 2
+                </p>
+                <p class="mb-1">
+                    <strong>Date :</strong> 15 mars 2025
+                </p>
+                <p class="mb-0">
+                    <strong>Heure du déménagement :</strong> 09:00
+                </p>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <div class="p-3 border rounded bg-white h-100">
+                        <h5 class="mb-3">Départ</h5>
+                        <p class="mb-1">
+                            <strong>Ville :</strong> Rouen
+                        </p>
+                        <p class="mb-1">
+                            <strong>Adresse :</strong> 12 rue des Lilas
+                        </p>
+                        <p class="mb-1">
+                            <strong>Type de logement :</strong> Appartement
+                        </p>
+                        <p class="mb-1">
+                            <strong>Étage :</strong> 3ᵉ
+                        </p>
+                        <p class="mb-0">
+                            <strong>Ascenseur :</strong> Oui
+                        </p>
                     </div>
-
-                    <div class="mb-3 p-3 border rounded bg-white">
-                      <h5 class="mb-3">Départ</h5>
-
-                      <p><strong>Ville :</strong> Rouen</p>
-                      <p><strong>Adresse :</strong> 10 rue des Fleurs</p>
-                      <p><strong>Type de logement :</strong> Appartement</p>
-                      <p><strong>Étage :</strong> 3</p>
-                      <p><strong>Ascenseur :</strong> Oui</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="p-3 border rounded bg-white h-100">
+                        <h5 class="mb-3">Arrivée</h5>
+                        <p class="mb-1">
+                            <strong>Ville :</strong> Paris
+                        </p>
+                        <p class="mb-1">
+                            <strong>Adresse :</strong> 5 avenue de la République
+                        </p>
+                        <p class="mb-1">
+                            <strong>Type de logement :</strong> Maison
+                        </p>
+                        <p class="mb-1">
+                            <strong>Étage :</strong> RDC
+                        </p>
+                        <p class="mb-0">
+                            <strong>Ascenseur :</strong> Non
+                        </p>
                     </div>
+                </div>
+            </div>
+            <div class="mb-3 p-3 border rounded bg-white">
+                <h5 class="mb-3">Volume & objets</h5>
 
-                    <div class="mb-3 p-3 border rounded bg-white">
-                      <h5 class="mb-3">Arrivée</h5>
+                <p class="mb-1">
+                    <strong>Volume estimé :</strong> 12 m³
+                </p>
+                <p class="mb-3">
+                    <strong>Objets principaux :</strong> lit , canapé, frigo, 20 cartons…
+               </p>
+               <div class="mb-2">
+                    <strong>Photos :</strong><br>
+               </div>
 
-                      <p><strong>Ville :</strong> Paris</p>
-                      <p><strong>Adresse :</strong> 25 avenue Victor Hugo</p>
-                      <p><strong>Type de logement :</strong> Maison</p>
-                      <p><strong>Étage :</strong> RDC</p>
-                      <p><strong>Ascenseur :</strong> Non</p>
-                    </div>
-
-                    <div class="mb-3 p-3 border rounded bg-white">
-                      <h5 class="mb-3">Volume & objets</h5>
-
-                      <p><strong>Volume estimé :</strong> 12 m³</p>
-                      <p><strong>Objets principaux :</strong> lit 140, canapé, frigo, 20 cartons…</p>
-                      <p><strong>Photos :</strong> (à ajouter plus tard)</p>
-                    </div>
-                    
-
-                    
+            </div>
                     <div class="d-flex justify-content-between mt-4">
                       <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExample" data-bs-slide="prev">Précédent</button>
                       <button type="submit" class="btn btn-success">Publier l’annonce</button>

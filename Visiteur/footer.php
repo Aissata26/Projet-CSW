@@ -1,7 +1,7 @@
 <?php
 include_once'header.php';
 ?>
-<footer class="background text-light py-4 " >
+<footer class="background-B text-light py-4 " >
     <div class="container justify-content-center align-items-center text-center ">
         <div class="row p-4">
             <div class="col-12 col-md-3">

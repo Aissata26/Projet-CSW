@@ -87,17 +87,10 @@ include_once '../Client/nav1.php';
                </div>
 
             </div>
-            
-
-
-
-
-          
-            
-            
-            
-
-          
+            <div class="mb-3">
+                <label for="prix" class="form-label"><strong>Proposer un prix en £</strong></label>
+                <input type="text" class="form-control" id="prix" placeholder="Ex:250£">
+            </div>
 
         </section>
 

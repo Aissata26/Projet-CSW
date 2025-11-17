@@ -3,7 +3,7 @@ include_once '../Visiteur/header.php';
 include_once '../fonction.php';
 ?>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark background">
+    <nav class="navbar navbar-expand-lg navbar-dark background-C">
   <div class="container-fluid">
     <a class="navbar-brand text-light fw-bold fs-2" href="#">MOVE<span class="titre-color">UP</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +16,12 @@ include_once '../fonction.php';
         </li>
         <li class="nav-item ">
           <a class="nav-link mx-lg-5 text-light dynamique" href="#" >
-            Deconnexion
+            Mission Accepter
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link mx-lg-5 text-light dynamique" href="#" >
+            Deconnexiion
           </a>
         </li>
       </ul>
