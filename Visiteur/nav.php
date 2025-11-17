@@ -52,7 +52,7 @@ include_once '../fonction.php';
                     <div class="modal-body">
                         <form class="justify-content-center"  method="POST" action="../fonction.php">
                             <div class="mb-3 text-start text-danger">
-                               <p id="mes"><?php if(isset($_SESSION['erreur'])){echo $_SESSION['erreur'];}?><?php if(isset($_SESSION['success'])){echo $_SESSION['success'];}?></p>
+                               <p id="mes"><?php if(isset($_SESSION['erreur'])){echo $_SESSION['erreur'];}?><?php if(isset($_SESSION['success'])){echo $_SESSION['success'];} if(isset($_SESSION['erreur2'])){echo $_SESSION['erreur2'];}?></p>
                                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Votre@email.com">
                             </div>
                             <div class="mb-3 ">
@@ -107,8 +107,8 @@ include_once '../fonction.php';
             <label for="catégorie" class="form-label text-light fs-5 ">Catégorie</label>
             <select class="form-select" aria-label="Default select example" name="categorie">
               <option>---</option>
-              <option value="1" <?php if(isset($_SESSION['categorie'])){if($_SESSION['categorie']==='Client'){echo 'selected';}}?>>Client</option>
-              <option value="2" <?php if(isset($_SESSION['categorie'])){if($_SESSION['categorie']==='Déménagement'){echo 'selected';}}?>>Déménageur</option>
+              <option value="1" <?php if(isset($_SESSION['categorie'])){if($_SESSION['categorie']==='1'){echo 'selected';}}?>>Client</option>
+              <option value="2" <?php if(isset($_SESSION['categorie'])){if($_SESSION['categorie']==='2'){echo 'selected';}}?>>Déménageur</option>
             </select>
           </div>
           <div class="mb-3 text-start">
@@ -140,7 +140,13 @@ include_once '../fonction.php';
     var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
     myModal.show();
 </script>
-<?php unset($_SESSION['erreur']); } ?>
+<?php unset($_SESSION['erreur2']); } ?>
+<?php if(isset($_SESSION['erreur2'])) { ?>
+<script>
+    var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+    myModal.show();
+</script>
+<?php unset($_SESSION['erreur2']); } ?>
 <?php if(isset($_SESSION['erreur1'])) { ?>
 <script>
     var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop1'));

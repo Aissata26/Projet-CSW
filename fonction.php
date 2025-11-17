@@ -48,24 +48,28 @@ function traitement_con()
           {
             if($utilisateur['email']===$_POST['email'])
             {
-              if($utilisateur['motdepasse']===$_POST['password'])
+              unset($_SESSION['erreur2']);
+              if(password_verify($_POST['password'],$utilisateur['motdepasse']))
               {
+                unset($_SESSION['erreur']);
                header("location: Client/client.php");
                exit();
               }
               else
               {
                 $_SESSION['erreur']="Veuillez entrer un mot de passe correcte";
-                header("location: Visiteur/index.php");
-                exit();
               }
             }
             else
             {
-              $_SESSION['erreur']="Veuillez entrer un mail valide";
-              header("location: Visiteur/index.php");
-              exit();
+              $_SESSION['erreur2']="Veuillez entrer un mail valide";
+
             }
+          }
+          if(isset($_SESSION['erreur2']) || isset($_SESSION['erreur']))
+          {
+            header("location: Visiteur/index.php");
+            exit();
           }
         }
       }
@@ -88,17 +92,17 @@ function traitement_ins()
         $email=strip_tags($_POST['email']);
         if(strip_tags($_POST['categorie'])===1)
         {
-          $categorie=Client;
+          $categorie="Client";
         }
         else
         {
-          $categorie=Déménageur;
+          $categorie="Déménageur";
         }
         $motdepasse=strip_tags($_POST['motdepasse']);
         $telephone=strip_tags($_POST['telephone']);
         $chiffrement=password_hash($motdepasse,PASSWORD_BCRYPT);
         add_utilisateur($nom,$prenom,$email,$chiffrement,$categorie,$telephone,$anniversaire);
-        $_SESSION['success']=réussis;
+        $_SESSION['success']="réussis";
         header("location: Visiteur/index.php");
         
 
@@ -120,6 +124,16 @@ function traitement_ins()
 
   }
 }
+
+function control_form_ann()
+{
+  if(!isset($_SESSION['init']))
+  {
+    $_SESSION['init']=0;
+    $_SESSION['cmt']=$_SESSION['init'];
+  }
+   $_SESSION['cmpt']++;
+}
   if(isset($_POST['connexion']))
       {
         traitement_con();
@@ -128,7 +142,5 @@ function traitement_ins()
   {
     traitement_ins();
   }
-
-
 
 ?>

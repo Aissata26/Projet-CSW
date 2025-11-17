@@ -16,7 +16,7 @@ include_once '../fonction.php';
         </li>
         <li class="nav-item">
           <!-- link -->
-          <a  href="#"class="mx-lg-5 text-light dynamique nav-link " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <a  href="creerAnnonce.php"class="mx-lg-5 text-light dynamique nav-link ">
               Creer une annonce
           </a>
         </li>

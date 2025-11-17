@@ -1,6 +1,9 @@
 <?php 
+session_start();
 include_once '../Visiteur/header.php';
+include_once '../fonction.php';
 include_once 'nav1.php';
+control_form_ann();
 ?>
 <body class="background-B">
 
@@ -11,34 +14,34 @@ include_once 'nav1.php';
         <section class="bg-light p-3 rounded">
 
           <form>
-            <div id="carouselExample" class="carousel slide">
+            <div id="carouselExample" class="carousel slide carousel-fade">
               <div class="carousel-inner">
 
-                <div class="carousel-item ">
+                <div class="carousel-item active">
                   <div class="container my-5">
                     <div class="row justify-content-center">
                       <div class="col-12 col-lg-9">
-                        <div class="row">
-                          <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">1</p>
+                        <div class="row ">
+                          <div class="col-1 border border-2 border-primary rounded-circle ">
+                            <p class="border rounded-circle text-center border-black mt-3 ">1</p>
                           </div>
                           <div class="col-1">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary  mt-3 ">›</p>
                           </div>
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">2</p>
+                            <p class="border rounded-circle text-center border-black  mt-3 ">2</p>
                           </div>
                           <div class="col-1 p-0">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary  mt-3 ">›</p>
                           </div>
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">3</p>
+                            <p class="border rounded-circle text-center border-black  mt-3 ">3</p>
                           </div>
                           <div class="col-1 p-0">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary  mt-3 ">›</p>
                           </div>
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">4</p>
+                            <p class="border rounded-circle text-center border-black  mt-3 ">4</p>
                           </div>
                         </div>
                       </div>
@@ -74,7 +77,7 @@ include_once 'nav1.php';
                     </div>
 
                     <div class="d-flex justify-content-end mt-4">
-                      <button type="button" class="btn btn-primary" id="next1">Suivant</button>
+                      <button type="button" class="btn btn-primary" data-bs-target="#carouselExample" data-bs-slide="next">Suivant</button>
                     </div>
                   </div>
                 </div>
@@ -85,25 +88,25 @@ include_once 'nav1.php';
                       <div class="col-12 col-lg-9">
                         <div class="row">
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">1</p>
+                            <p class="border rounded-circle text-center border-black mt-3 bg-primary">1</p>
                           </div>
                           <div class="col-1">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary mt-3">›</p>
                           </div>
-                          <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">2</p>
+                          <div class="col-1 border border-2 border-primary rounded-circle">
+                            <p class="border rounded-circle text-center border-black mt-3">2</p>
                           </div>
                           <div class="col-1 p-0">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary mt-3">›</p>
                           </div>
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">3</p>
+                            <p class="border rounded-circle text-center border-black mt-3">3</p>
                           </div>
                           <div class="col-1 p-0">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary mt-3">›</p>
                           </div>
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">4</p>
+                            <p class="border rounded-circle text-center border-black mt-3">4</p>
                           </div>
                         </div>
                       </div>
@@ -194,8 +197,8 @@ include_once 'nav1.php';
                     </div>
 
                     <div class="d-flex justify-content-between mt-4">
-                      <button type="button" class="btn btn-outline-secondary" id="prev2">Précédent</button>
-                      <button type="button" class="btn btn-primary" id="next2">Suivant</button>
+                      <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExample" data-bs-slide="prev">Précédent</button>
+                      <button type="button" class="btn btn-primary" data-bs-target="#carouselExample" data-bs-slide="next">Suivant</button>
                     </div>
                   </div>
                 </div>
@@ -206,25 +209,25 @@ include_once 'nav1.php';
                       <div class="col-12 col-lg-9">
                         <div class="row">
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">1</p>
+                            <p class="border rounded-circle text-center border-black mt-3 bg-primary">1</p>
                           </div>
                           <div class="col-1">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary mt-3">›</p>
                           </div>
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">2</p>
+                            <p class="border rounded-circle text-center border-black mt-3 bg-primary">2</p>
                           </div>
                           <div class="col-1 p-0">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary mt-3">›</p>
                           </div>
-                          <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">3</p>
+                          <div class="col-1 border border-2 border-primary rounded-circle">
+                            <p class="border rounded-circle text-center border-black  mt-3">3</p>
                           </div>
                           <div class="col-1 p-0">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary mt-3">›</p>
                           </div>
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">4</p>
+                            <p class="border rounded-circle text-center border-black mt-3">4</p>
                           </div>
                         </div>
                       </div>
@@ -250,37 +253,37 @@ include_once 'nav1.php';
                     </div>
 
                     <div class="d-flex justify-content-between mt-4">
-                      <button type="button" class="btn btn-outline-secondary" id="prev3">Précédent</button>
-                      <button type="button" class="btn btn-primary" id="next3">Suivant</button>
+                      <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExample" data-bs-slide="prev">Précédent</button>
+                      <button type="button" class="btn btn-primary" data-bs-target="#carouselExample" data-bs-slide="next">Suivant</button>
                     </div>
                   </div>
                 </div>
 
-                <div class="carousel-item active">
+                <div class="carousel-item ">
                   <div class="container my-5">
                     <div class="row justify-content-center">
-                      <div class="col-12 col-lg-8">
+                      <div class="col-12 col-lg-9">
                         <div class="row">
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">1</p>
+                            <p class="border rounded-circle text-center border-black mt-3 bg-primary">1</p>
                           </div>
                           <div class="col-1">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary mt-3">›</p>
                           </div>
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">2</p>
+                            <p class="border rounded-circle text-center border-black mt-3 bg-primary">2</p>
                           </div>
                           <div class="col-1 p-0">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary mt-3">›</p>
                           </div>
                           <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">3</p>
+                            <p class="border rounded-circle text-center border-black mt-3 bg-primary">3</p>
                           </div>
                           <div class="col-1 p-0">
-                            <p class="text-center text-secondary">›</p>
+                            <p class="text-center text-secondary mt-3">›</p>
                           </div>
-                          <div class="col-1">
-                            <p class="border rounded-circle text-center border-black">4</p>
+                          <div class="col-1 border border-2 border-primary rounded-circle">
+                            <p class="border rounded-circle text-center border-black mt-3">4</p>
                           </div>
                         </div>
                       </div>
@@ -331,24 +334,13 @@ include_once 'nav1.php';
 
                     
                     <div class="d-flex justify-content-between mt-4">
-                      <button type="button" class="btn btn-outline-secondary" id="prev4">Précédent</button>
+                      <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExample" data-bs-slide="prev">Précédent</button>
                       <button type="submit" class="btn btn-success">Publier l’annonce</button>
                     </div>
                   </div>
                 </div>
 
               </div>
-
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-
             </div>
           </form>
 
@@ -357,7 +349,7 @@ include_once 'nav1.php';
       </div>
     </div>
   </div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 <?php 
