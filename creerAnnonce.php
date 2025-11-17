@@ -53,27 +53,27 @@ include_once 'nav1.php';
                     <form methode="POST" action="">
                     <div class="mb-3">
                       <label for="titre1" class="form-label">Titre de l’annonce</label>
-                      <input type="text" class="form-control" id="titre1" name="ta" placeholder="Déménagement T2 Rouen → Paris">
+                      <input type="text" class="form-control" id="titre1" placeholder="Déménagement T2 Rouen → Paris">
                     </div>
 
                     <div class="mb-3">
                       <label for="desc1" class="form-label">Description rapide</label>
-                      <textarea class="form-control" id="desc1" rows="3"  name="dr" placeholder="Ex. Appartement T2, meubles, électroménager."></textarea>
+                      <textarea class="form-control" id="desc1" rows="3" placeholder="Ex. Appartement T2, meubles, électroménager."></textarea>
                     </div>
 
                     <div class="mb-3">
-                      <label for="nb_demenageurs" class="form-label" >Nombre de déménageurs souhaités</label>
-                      <input type="number" class="form-control" id="nb_demenageurs" name="nbs" min="1" placeholder="1">
+                      <label for="nb_demenageurs" class="form-label">Nombre de déménageurs souhaités</label>
+                      <input type="number" class="form-control" id="nb_demenageurs"  min="1" placeholder="1">
                     </div>
 
                     <div class="mb-3">
-                      <label for="date1" class="form-label" >Date de Déménagement</label>
-                      <input type="date" class="form-control padding" name="dd" id="date1">
+                      <label for="date1" class="form-label">Date de Déménagement</label>
+                      <input type="date" class="form-control padding" id="date1">
                     </div>
 
                     <div class="mb-3">
                       <label for="heure1" class="form-label">Heure de début</label>
-                      <input type="time" class="form-control padding" id="heure1" name="hd">
+                      <input type="time" class="form-control padding" id="heure1">
                     </div>
 
                     <div class="d-flex justify-content-end mt-4">

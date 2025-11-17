@@ -7,7 +7,7 @@ $script;
     try
     {
 
-        $pdo= new PDO("mysql:host=localhost;dbname=bdd_7_13","root","");
+        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","root");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 
     }
@@ -125,14 +125,18 @@ function traitement_ins()
   }
 }
 
-function control_form_ann()
+function verf()
 {
-  if(!isset($_SESSION['init']))
+
+  if(empty($_POST['ta']) || empty($_POST['dr']) || empty($_POST['nbs']) || empty($_POST['dd']) || empty($_POST['hd']))
   {
-    $_SESSION['init']=0;
-    $_SESSION['cmt']=$_SESSION['init'];
+      $_SESSION['A']="veuillez remplir tous les champs";
   }
-   $_SESSION['cmpt']++;
+  
+}
+function form_creer_annonce()
+{
+     
 }
   if(isset($_POST['connexion']))
       {
