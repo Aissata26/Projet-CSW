@@ -51,6 +51,7 @@ include_once 'nav1.php';
                       <h2 class="text-center mt-4 titre-color me-5">Informations générales</h2>
                     </div>
                     <form methode="POST" action="">
+                      <p><?php if(isset($_SESSION['A'])){ echo'$_SESSION['A']'}?>
                     <div class="mb-3">
                       <label for="titre1" class="form-label">Titre de l’annonce</label>
                       <input type="text" class="form-control" id="titre1" name="ta" placeholder="Déménagement T2 Rouen → Paris">
