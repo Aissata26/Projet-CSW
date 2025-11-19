@@ -7,7 +7,7 @@ $script;
     try
     {
 
-        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","root");
+        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 
     }
@@ -125,15 +125,46 @@ function traitement_ins()
   }
 }
 
+function verf1()
+{
+  if(isset($_POST['suivant2']))
+  {
+
+  if(empty($_POST['vd']) || empty($_POST['ad']) || empty($_POST['td']) || empty($_POST['ed']) || empty($_POST['ad']) || empty($_POST['va']) || empty($_POST['aa']) || empty($_POST['ta']) || empty($_POST['ea']) || empty($_POST['asa']))
+  {
+     $_SESSION['A']="veuillez remplir tous les champs";
+      header("location: Client/creerAnnonce.php");
+      exit();
+    
+  }
+  else 
+  {
+    $_SESSION['c']="Bon";
+    header("location: Client/creerAnnonce.php");
+      exit();
+  }
+} 
+}verf1();
 function verf()
 {
+  if(isset($_POST['suivant1']))
+  {
 
   if(empty($_POST['ta']) || empty($_POST['dr']) || empty($_POST['nbs']) || empty($_POST['dd']) || empty($_POST['hd']))
   {
-      $_SESSION['A']="veuillez remplir tous les champs";
+     $_SESSION['A']="veuillez remplir tous les champs";
+      header("location: Client/creerAnnonce.php");
+      exit();
+    
   }
-  
+  else 
+  {
+    $_SESSION['B']="Bon";
+    header("location: Client/creerAnnonce.php");
+      exit();
+  }
 }
+}verf();
 function form_creer_annonce()
 {
      
@@ -146,5 +177,6 @@ function form_creer_annonce()
   {
     traitement_ins();
   }
+
 
 ?>
