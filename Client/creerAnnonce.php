@@ -3,7 +3,10 @@ session_start();
 include_once '../Visiteur/header.php';
 include_once '../fonction.php';
 include_once 'nav1.php';
+verf();
+verf1();
 ?>
+
 <body class="background-A">
 
   <div class="container mt-4">
@@ -11,12 +14,10 @@ include_once 'nav1.php';
       <div class="col-12 col-md-10 col-lg-10">
 
         <section class="bg-light p-3 rounded">
-
-          <form methode="POST" action="../fonction.php">
             <div id="carouselExample" class="carousel slide carousel-fade">
               <div class="carousel-inner">
 
-                <div class="carousel-item active">
+                <div class="carousel-item <?php if(isset($_SESSION['B'])){ echo '';}else {echo'active';}?>">
                   <div class="container my-5">
                     <div class="row justify-content-center">
                       <div class="col-12 col-lg-9">
@@ -39,7 +40,6 @@ include_once 'nav1.php';
                           <div class="col-1 p-0">
                             <p class="text-center text-secondary  mt-3 ">›</p>
                           </div>
-                          sabotage
                           <div class="col-1">
                             <p class="border rounded-circle text-center border-black  mt-3 ">4</p>
                           </div>
@@ -50,8 +50,8 @@ include_once 'nav1.php';
                     <div>
                       <h2 class="text-center mt-4 titre-color me-5">Informations générales</h2>
                     </div>
-                    <form methode="POST" action="">
-                      <p><?php if(isset($_SESSION['A'])){ echo'$_SESSION['A']'}?>
+                    <form method="POST" action="../fonction.php">
+                      <p><?php if(isset($_SESSION['A'])){ echo $_SESSION['A']; unset($_SESSION['A']);}?></p>
                     <div class="mb-3">
                       <label for="titre1" class="form-label">Titre de l’annonce</label>
                       <input type="text" class="form-control" id="titre1" name="ta" placeholder="Déménagement T2 Rouen → Paris">
@@ -82,13 +82,13 @@ include_once 'nav1.php';
                     </div>
 
                     <div class="d-flex justify-content-end mt-4">
-                      <button type="submit" class="btn btn-primary" data-bs-target="#carouselExample" data-bs-slide="next">Suivant</button>
+                      <button type="submit" class="btn btn-primary"  name="suivant1" data-bs-target="#carouselExample">Suivant</button>
                     </div>
                     </form>
                   </div>
                 </div>
 
-                <div class="carousel-item ">
+                <div class="carousel-item <?php if(isset($_SESSION['B'])){ echo 'active'; unset($_SESSION['B']);}else {echo 'e';}?>">
                   <div class="container my-5">
                     <div class="row justify-content-center">
                       <div class="col-12 col-lg-9">
@@ -123,23 +123,24 @@ include_once 'nav1.php';
                     </div>
 
                     <div>
+                      <p><?php if(isset($_SESSION['A'])){ echo $_SESSION['A']; unset($_SESSION['A']);}?></p>
                       <h5 class="mb-2">Départ</h5>
                     </div>
-
+                    <form method="POST" action="../fonction.php">
                     <div class="mb-3">
                       <label for="ville_depart" class="form-label">Ville de départ</label>
-                      <input type="text" class="form-control" id="ville_depart" placeholder="Ex.Rouen">
+                      <input type="text" class="form-control" id="ville_depart"  name="vd" placeholder="Ex.Rouen">
                     </div>
 
                     <div class="mb-3">
                       <label for="addresse_depart" class="form-label">Adresse</label>
-                      <input type="text" class="form-control" id="adresse_depart" placeholder="N° et rue">
+                      <input type="text" class="form-control" id="adresse_depart" name="ad" placeholder="N° et rue">
                     </div>
 
                     <div class="row g-2">
                       <div class="col-12 col-md-6">
                         <label for="type_depart" class="form-label">Type de logement</label>
-                        <select id="type_depart" class="form-select">
+                        <select id="type_depart" class="form-select" name="td">
                           <option value="">Choisir…</option>
                           <option>Appartement</option>
                           <option>Maison</option>
@@ -148,13 +149,13 @@ include_once 'nav1.php';
                       </div>
 
                       <div class="col-6 col-md-3">
-                        <label for="etage_depart" class="form-label">Étage</label>
+                        <label for="etage_depart" class="form-label" name="ed">Étage</label>
                         <input type="number" class="form-control" id="etage_depart" min="0" placeholder="0">
                       </div>
 
                       <div class="col-6 col-md-3">
-                        <label for="ascenseur_depart" class="form-label">Ascenseur</label>
-                        <select id="ascenseur_depart" class="form-select">
+                        <label for="ascenseur_depart" class="form-label" >Ascenseur</label>
+                        <select id="ascenseur_depart" class="form-select" name="ad">
                           <option value="">—</option>
                           <option>Oui</option>
                           <option>Non</option>
@@ -168,18 +169,18 @@ include_once 'nav1.php';
 
                     <div class="mb-3">
                       <label for="ville_arrivee" class="form-label">Ville d’arrivée</label>
-                      <input type="text" class="form-control" id="ville_arrivee" placeholder="Ex. Paris">
+                      <input type="text" class="form-control" id="ville_arrivee" name="va" placeholder="Ex. Paris">
                     </div>
 
                     <div class="mb-3">
                       <label for="adresse_arrivee" class="form-label">Adresse</label>
-                      <input type="text" class="form-control" id="adresse_arrivee" placeholder="N° et rue">
+                      <input type="text" class="form-control" id="adresse_arrivee" name="aa" placeholder="N° et rue">
                     </div>
 
                     <div class="row g-2">
                       <div class="col-12 col-md-6">
                         <label for="type_arrivee" class="form-label">Type de logement</label>
-                        <select id="type_arrivee" class="form-select">
+                        <select id="type_arrivee" class="form-select" name="ta">
                           <option value="">Choisir…</option>
                           <option>Appartement</option>
                           <option>Maison</option>
@@ -189,12 +190,12 @@ include_once 'nav1.php';
 
                       <div class="col-6 col-md-3">
                         <label for="etage_arrivee" class="form-label">Étage</label>
-                        <input type="number" class="form-control" id="etage_arrivee" min="0" placeholder="0">
+                        <input type="number" class="form-control" id="etage_arrivee" name="ea" min="0" placeholder="0">
                       </div>
 
                       <div class="col-6 col-md-3">
                         <label for="ascenseur_arrivee" class="form-label">Ascenseur</label>
-                        <select id="ascenseur_arrivee" class="form-select">
+                        <select id="ascenseur_arrivee" class="form-select" name="asa">
                           <option value="">—</option>
                           <option>Oui</option>
                           <option>Non</option>
@@ -204,12 +205,13 @@ include_once 'nav1.php';
 
                     <div class="d-flex justify-content-between mt-4">
                       <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExample" data-bs-slide="prev">Précédent</button>
-                      <button type="button" class="btn btn-primary" data-bs-target="#carouselExample" data-bs-slide="next">Suivant</button>
+                      <button type="submit" class="btn btn-primary" data-bs-target="#carouselExample" name="suivant2">Suivant</button>
                     </div>
+                  </form>
                   </div>
                 </div>
 
-                <div class="carousel-item ">
+                <div class="carousel-item <?php if(isset($_SESSION['c'])){ echo 'active'; unset($_SESSION['c']);}?>">
                   <div class="container my-5">
                     <div class="row justify-content-center">
                       <div class="col-12 col-lg-9">
@@ -382,7 +384,6 @@ include_once 'nav1.php';
 
               </div>
             </div>
-          </form>
 
         </section>
 
