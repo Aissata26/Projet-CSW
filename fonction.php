@@ -134,6 +134,7 @@ function verf1()
   {
      $_SESSION['A']="veuillez remplir tous les champs";
       header("location: Client/creerAnnonce.php");
+      $_SESSION['B']="Bon";
       exit();
     
   }

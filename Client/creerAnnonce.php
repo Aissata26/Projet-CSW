@@ -123,7 +123,7 @@ verf1();
                     </div>
 
                     <div>
-                      <p><?php if(isset($_SESSION['A'])){ echo $_SESSION['A']; unset($_SESSION['A']);}?></p>
+                      <p><?php if(isset($_SESSION['A'])){ echo $_SESSION['A']; unset($_SESSION['A']);} else{ echo $_SESSION['A'];} ?></p>
                       <h5 class="mb-2">Départ</h5>
                     </div>
                     <form method="POST" action="../fonction.php">
