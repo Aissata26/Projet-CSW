@@ -148,5 +148,5 @@ include_once 'nav.php';
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <?php include_once '../Visiteur/footer.php'; ?>
 </body>
+<?php include_once '../Visiteur/footer.php'; ?>
