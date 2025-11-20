@@ -1,67 +1,68 @@
 <?php 
 include_once '../Visiteur/header.php';
-include_once 'nav.php';
+include_once 'nav1.php';
 ?>
 <body class="background-A">
-  <main class="container py-4">
-    <div class="row">
-      <h2 class="text-center text-light py-4">MON PROFIL</h2>
-    </div>
 
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-10 col-lg-8">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <div class="d-flex align-items-center mb-4">
-              <img src="https://via.placeholder.com/88x88.png?text=👤" alt="Avatar"
-                   class="rounded-circle me-3" width="88" height="88">
-              <div>
-                <h5 class="mb-1">Aïssata Adama Diallo</h5>
-                <span class="badge bg-primary">Client vérifié</span>
-              </div>
-            </div>
+<main class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-7">
 
-            <div class="row g-3">
-              <div class="col-12 col-md-6">
-                <label class="form-label text-muted small m-0">Email</label>
-                <p class="mb-0">aissata@example.com</p>
-              </div>
-              <div class="col-12 col-md-6">
-                <label class="form-label text-muted small m-0">Téléphone</label>
-                <p class="mb-0">06 35 44 57 42</p>
-              </div>
-              <div class="col-12 col-md-6">
-                <label class="form-label text-muted small m-0">Ville</label>
-                <p class="mb-0">Rouen, France</p>
-              </div>
-              <div class="col-12 col-md-6">
-                <label class="form-label text-muted small m-0">Membre depuis</label>
-                <p class="mb-0">Septembre 2024</p>
-              </div>
-            </div>
+      <section class="rounded-4 shadow-lg overflow-hidden bg-light">
 
-            <div class="d-flex flex-wrap gap-2 border-top pt-3 mt-4">
-              <a href="#" class="btn btn-outline-primary">Modifier</a>
-              <a href="#" class="btn btn-outline-secondary">Changer le mot de passe</a>
-              <a href="#" class="btn btn-outline-danger ms-auto">Supprimer le compte</a>
-            </div>
+        <div class="px-4 py-3 background-C text-white d-flex justify-content-between align-items-center">
+          <div>
+            <h3 class="mb-1">Mon profil</h3>
+            <p class="mb-0" style="font-size:0.85rem;">
+              Informations de votre compte Move<span class="titre-color">UP</span>.
+            </p>
+          </div>
+
+          <div class="rounded-circle d-flex align-items-center justify-content-center"
+               style="width:48px;height:48px;background-color:rgba(255,255,255,0.18);">
+            <span class="fw-bold fs-6 text-white">AD</span>
           </div>
         </div>
 
-        <!-- Optionnel : bloc préférences notifications (lecture seule pour l'instant) -->
-        <div class="card shadow-sm mt-3">
-          <div class="card-body">
-            <h6 class="mb-3">Préférences</h6>
-            <div class="d-flex flex-column gap-2">
-              <div><span class="badge bg-success me-2">Activé</span> Notifications email pour nouvelles propositions</div>
-              <div><span class="badge bg-success me-2">Activé</span> Rappels la veille du déménagement</div>
-            </div>
+        <div class="px-4 py-4">
+
+          <div class="mb-4 p-3 border rounded bg-white">
+
+            <p class="mb-2"><strong>Nom complet :</strong><br> Aissata Diallo</p>
+            <p class="mb-2"><strong>Email :</strong><br> aissata@example.com</p>
+            <p class="mb-2"><strong>Téléphone :</strong><br> 06 00 00 00 00</p>
+            <p class="mb-0"><strong>Date de naissance :</strong><br> 01/01/2000</p>
+
           </div>
+
+          <div class="d-flex flex-column flex-md-row gap-2 mb-3">
+
+            <a href="modifierProfil.php" class="btn btn-primary btn-sm flex-fill">
+              Modifier profil
+            </a>
+
+            <a href="modifierMotDePasse.php" class="btn btn-outline-primary btn-sm flex-fill">
+              Mot de passe
+            </a>
+
+          </div>
+
+          <button type="button" class="btn btn-outline-danger btn-sm w-100 mb-3"">
+            Supprimer mon compte
+          </button>
+
+          <a href="client.php" class="btn btn-outline-secondary btn-sm">
+            ← Retour à mes annonces
+          </a>
+
         </div>
 
-      </div>
-    </div>
-  </main>
+      </section>
 
-  <?php include_once '../Visiteur/footer.php'; ?>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<?php include_once '../Visiteur/footer.php'; ?>
 </body>

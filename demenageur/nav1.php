@@ -12,10 +12,10 @@ include_once '../fonction.php';
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
         <li class="nav-item">
-          <a class="nav-link mx-lg-5 text-light dynamique " aria-current="page" href="profil.php">Profil</a>
+          <a class="nav-link mx-lg-5 text-light dynamique " aria-current="page" href="#">Profil</a>
         </li>
          <li class="nav-item ">
-          <a class="nav-link mx-lg-5 text-light dynamique" href="client.php" >
+          <a class="nav-link mx-lg-5 text-light dynamique" href="#" >
             Acceuil
           </a>
         </li>
