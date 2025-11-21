@@ -7,7 +7,7 @@ $script;
     try
     {
 
-        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","root");
+        $pdo= new PDO("mysql:host=localhost;dbname=bdd_7_13","root","");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 
     }
@@ -134,6 +134,7 @@ function verf1()
   {
      $_SESSION['A']="veuillez remplir tous les champs";
       header("location: Client/creerAnnonce.php");
+      $_SESSION['B']="Bon";
       exit();
     
   }
