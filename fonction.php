@@ -7,7 +7,7 @@ $script;
     try
     {
 
-        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","root");
+        $pdo= new PDO("mysql:host=localhost;dbname=bdd_7_13","root","");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 
     }

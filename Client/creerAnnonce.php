@@ -58,9 +58,11 @@ verf1();
 
             <div class="carousel-inner">
 
-              <div class="carousel-item <?php if(!isset($_SESSION['B'])) echo 'active'; ?>">
-                <div class="container my-5">
+              <div class="carousel-item active " id="slide1">
+                <div class="container my-5" id="mot">
+                  <div id="message">
 
+                  </div>
                   <div class="mb-3">
                     <label for="titre1" class="form-label">Titre de l’annonce</label>
                     <input type="text" class="form-control" id="titre1" name="ta" placeholder="Déménagement T2 Rouen → Paris">
@@ -87,9 +89,11 @@ verf1();
                       <input type="time" class="form-control padding" name="hd">
                     </div>
                   </div>
-
+                  <div>
+                    <button type="button" id="suivant1" class="btn btn-primary">Enregister</button>
+                 </div>
                   <div class="d-flex justify-content-end mt-4">
-                    <button type="button" class="btn btn-primary" name="suivant1" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <button type="button" class="btn btn-primary" id ="suivant11"name="suivant1" data-bs-target="#carouselExample" data-bs-slide="next">
                       Suivant
                     </button>
                   </div>
@@ -97,9 +101,11 @@ verf1();
                 </div>
               </div>
 
-              <div class="carousel-item <?php if(isset($_SESSION['B'])) { echo 'active'; unset($_SESSION['B']); } ?>">
+              <div class="carousel-item" id="slide2">
                 <div class="container my-5">
+                  <div id="message1">
 
+                  </div> 
                   <h5 class="mb-2">Départ</h5>
 
                   <div class="mb-3">
@@ -175,17 +181,23 @@ verf1();
                       </select>
                     </div>
                   </div>
+                  <div>
+                    <button type="button" id="suivant2" class="btn btn-primary">Enregister</button>
+                 </div>
 
                   <div class="d-flex justify-content-between mt-4">
                     <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExample" data-bs-slide="prev">Précédent</button>
-                    <button type="submit" class="btn btn-primary" name="suivant2">Suivant</button>
+                    <button type="submit" class="btn btn-primary" name="suivant2" data-bs-target="#carouselExample" data-bs-slide="next">Suivant</button>
                   </div>
 
                 </div>
               </div>
 
-              <div class="carousel-item <?php if(isset($_SESSION['c'])) { echo 'active'; unset($_SESSION['c']); } ?>">
+              <div class="carousel-item " id="slide3">
                 <div class="container my-5">
+                  <div id="message2">
+
+                  </div>
 
                   <div class="mb-3">
                     <label class="form-label">Volume estimé (m³)</label>
@@ -201,6 +213,9 @@ verf1();
                     <label class="form-label">Photos</label>
                     <input type="file" class="form-control" multiple>
                   </div>
+                  <div>
+                    <button type="button" id="suivant3" class="btn btn-primary">Enregister</button>
+                 </div>
 
                   <div class="d-flex justify-content-between mt-4">
                     <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExample" data-bs-slide="prev">Précédent</button>
@@ -333,6 +348,92 @@ document.querySelectorAll('.goToSlide').forEach(btn => {
     c.to(index);
   });
 });
+</script>
+<script>
+  let bouton=document.getElementById("suivant1");
+  bouton.addEventListener("click",function()
+{
+    let variable = document.querySelectorAll("#slide1 input");
+    let variable1 = document.querySelectorAll("#slide1 textarea");
+     for(let i=0 ; i< variable.length; i++)
+     {
+      if(variable[i].value ==="")
+      {
+        let parentElement=document.getElementById("message");
+        let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
+        
+        parentElement.innerHTML=p;
+         break;
+
+      }
+      else
+      {
+        let titreannonce=variable[i].value;
+
+      }
+     
+     }
+     for(let i=0 ; i< variable1.length; i++)
+     {
+      if(variable1[i].value ==="")
+      {
+        let parentElement=document.getElementById("message");
+        let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
+        
+        parentElement.innerHTML=p;
+         break;
+
+      }
+      else
+      {
+        let titreannonce=variable[i].value;
+
+      }
+     
+     }
+
+})
+let bouton1=document.getElementById("suivant2");
+  bouton1.addEventListener("click",function()
+{
+    let variable = document.querySelectorAll("#slide2 input");
+     for(let i=0 ; i< variable.length; i++)
+     {
+      if(variable[i].value ==="")
+      {
+        let parentElement=document.getElementById("message1");
+        let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
+        
+        parentElement.innerHTML=p;
+         break;
+
+      }
+     
+     }
+
+})
+let bouton2=document.getElementById("suivant3");
+  bouton2.addEventListener("click",function()
+{
+    let variable = document.querySelectorAll("#slide3 input");
+     for(let i=0 ; i< variable.length; i++)
+     {
+      if(variable[i].value ==="")
+      {
+        let parentElement=document.getElementById("message2");
+        let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
+        
+        parentElement.innerHTML=p;
+         break;
+
+      }
+     
+     }
+
+})
+
+ 
+
 </script>
 
 </body>
