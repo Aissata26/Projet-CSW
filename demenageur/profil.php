@@ -10,7 +10,6 @@ include_once 'nav1.php';
 
       <section class="rounded-4 shadow-sm overflow-hidden bg-light">
 
-        <!-- Bandeau haut -->
         <div class="px-4 py-3"
              style="background: linear-gradient(135deg, #0A1A39, #123A75); color:#fff;">
           <div class="d-flex justify-content-between align-items-center flex-wrap">
@@ -18,19 +17,18 @@ include_once 'nav1.php';
             <div class="mb-2">
               <p class="mb-1 text-uppercase"
                  style="font-size:0.7rem;letter-spacing:1px;opacity:0.8;">
-                Profil MOVE<span class="titre-color">UP</span> – Client
+                Profil MOVE<span class="titre-color">UP</span> – Déménageur
               </p>
               <h2 class="mb-0 fw-bold" style="font-size:1.5rem;">
                 Aissata Diallo
               </h2>
               <p class="mb-1" style="font-size:0.9rem;opacity:0.9;">
-                aissata@example.com
+                demenageur@example.com
               </p>
             </div>
 
             <div class="mb-2 text-end">
-              <div class="rounded-circle d-flex align-items-center justify-content-center ms-auto"
-                   style="width:58px;height:58px;background:rgba(255,255,255,0.16);">
+              <div class="rounded-circle d-flex align-items-center justify-content-center ms-auto" style="width:58px;height:58px;background:rgba(255,255,255,0.16);">
                 <span class="fw-semibold" style="font-size:1rem;">AD</span>
               </div>
             </div>
@@ -38,10 +36,9 @@ include_once 'nav1.php';
           </div>
         </div>
 
-        <!-- Contenu -->
         <div class="px-4 py-4">
 
-          <h6 class="mb-1 fw-semibold">Informations personnelles</h6>
+          <h6 class="mb-1 fw-semibold">Informations du déménageur</h6>
           <hr class="mt-2 mb-3">
 
           <div class="mb-3">
@@ -61,12 +58,12 @@ include_once 'nav1.php';
 
           <div class="mb-3">
             <span class="text-muted small d-block">Adresse email</span>
-            <span class="fw-semibold">aissata@example.com</span>
+            <span class="fw-semibold">demenageur@example.com</span>
           </div>
 
           <div class="mb-3">
             <span class="text-muted small d-block">Catégorie</span>
-            <span class="fw-semibold">Client</span>
+            <span class="fw-semibold">Déménageur</span>
           </div>
 
           <div class="mb-4">
@@ -77,33 +74,27 @@ include_once 'nav1.php';
           <hr class="my-4">
 
           <div class="d-flex flex-column flex-md-row gap-2 mb-3">
-            <a href="modifierProfil.php"
-               class="btn btn-primary btn-sm flex-fill"
-               style="border-radius:30px;">
+            <a href="modifierProfil.php" class="btn btn-primary btn-sm flex-fill" style="border-radius:30px;">
               Modifier mes informations
             </a>
 
-            <a href="modifierMotDePasse.php"
-               class="btn btn-outline-primary btn-sm flex-fill"
-               style="border-radius:30px;">
+            <a href="modifierMotDePasse.php" class="btn btn-outline-primary btn-sm flex-fill" style="border-radius:30px;">
               Modifier mon mot de passe
             </a>
           </div>
 
-          <button type="button"
-                  class="btn btn-outline-danger btn-sm w-100 mb-3"
-                  style="border-radius:30px;">
+          <button type="button" class="btn btn-outline-danger btn-sm w-100 mb-3" style="border-radius:30px;">
             Supprimer mon compte
           </button>
 
-          <a href="client.php"
-             class="btn btn-link btn-sm p-0">
-            ← Retour à mes annonces
+          <a href="annonces_disponibles.php" class="btn btn-link btn-sm p-0">
+            ← Retour aux annonces 
           </a>
 
         </div>
 
       </section>
+
     </div>
   </div>
 </main>

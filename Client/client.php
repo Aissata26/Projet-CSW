@@ -61,9 +61,7 @@ include_once 'nav.php';
                   </div>
 
                   <div class="d-flex flex-column flex-md-row gap-2 mt-2 mt-md-0">
-                    <button class="btn btn-outline-secondary btn-sm"
-                            data-bs-toggle="modal"
-                            data-bs-target="#chatDem1">
+                    <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#chatDem1">
                       Discuter / Questions
                     </button>
                     <button class="btn btn-success btn-sm">Accepter</button>
@@ -85,9 +83,7 @@ include_once 'nav.php';
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
 
-      <div class="modal-header text-white"
-           style="background: linear-gradient(to right, #0A1A39, #06177aff);
-                  box-shadow: 0 2px 6px rgba(0,0,0,0.4);">
+      <div class="modal-header text-white" style="background: linear-gradient(to right, #0A1A39, #06177aff); box-shadow: 0 2px 6px rgba(0,0,0,0.4);">
         <h5 class="modal-title">Discussion avec “Déménageur Express”</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
@@ -96,8 +92,7 @@ include_once 'nav.php';
 
         <div class="d-flex mb-3">
           <div class="me-2">
-            <span class="bg-secondary text-white rounded-circle d-inline-flex justify-content-center align-items-center"
-                  style="width:40px;height:40px;">
+            <span class="bg-secondary text-white rounded-circle d-inline-flex justify-content-center align-items-center" style="width:40px;height:40px;">
               D
             </span>
           </div>
@@ -108,16 +103,12 @@ include_once 'nav.php';
         </div>
 
         <div class="d-flex justify-content-end mb-3">
-          <div class="p-3 rounded text-white me-2"
-               style="background: linear-gradient(to right, #0A1A39, #123A75);
-                      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-                      max-width:75%;">
+          <div class="p-3 rounded text-white me-2" style="background: linear-gradient(to right, #0A1A39, #123A75); box-shadow: 0 2px 6px rgba(0,0,0,0.4); max-width:75%;">
             <div class="fw-bold small">Vous</div>
             Oui, il y a une télévision et une table en verre.
           </div>
           <div>
-            <span class="bg-dark text-white rounded-circle d-inline-flex justify-content-center align-items-center"
-                  style="width:40px;height:40px;">
+            <span class="bg-dark text-white rounded-circle d-inline-flex justify-content-center align-items-center" style="width:40px;height:40px;">
               V
             </span>
           </div>
@@ -130,10 +121,7 @@ include_once 'nav.php';
           <textarea class="form-control mb-2" rows="2" placeholder="Écrivez votre message..."></textarea>
 
           <div class="text-end">
-            <button type="submit"
-                    class="btn text-white"
-                    style="background: linear-gradient(to right, #0A1A39, #123A75);
-                           box-shadow: 0 2px 6px rgba(0,0,0,0.4);">
+            <button type="submit"class="btn text-white" style="background: linear-gradient(to right, #0A1A39, #123A75);box-shadow: 0 2px 6px rgba(0,0,0,0.4);">
               Envoyer
             </button>
           </div>

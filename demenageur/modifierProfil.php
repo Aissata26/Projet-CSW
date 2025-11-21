@@ -2,7 +2,6 @@
 include_once '../Visiteur/header.php';
 include_once 'nav1.php';
 ?>
-
 <body class="background-A">
 
 <main class="container py-4">
@@ -12,7 +11,7 @@ include_once 'nav1.php';
 
         <div class="text-center py-4"
              style="background: linear-gradient(135deg,#0A1A39,#123A75); color:white;">
-          <h4 class="fw-bold mb-1">Modifier mon profil client</h4>
+          <h4 class="fw-bold mb-1">Modifier mon profil déménageur</h4>
           <p class="mb-0" style="opacity:0.9;">Mettez à jour vos informations</p>
         </div>
 
@@ -31,7 +30,7 @@ include_once 'nav1.php';
 
             <div class="mb-3">
               <label class="form-label">Adresse email</label>
-              <input type="email" class="form-control" name="email" value="aissata@example.com">
+              <input type="email" class="form-control" name="email" value="demenageur@example.com">
             </div>
 
             <div class="mb-3">
@@ -51,7 +50,7 @@ include_once 'nav1.php';
                 Enregistrer
               </button>
 
-              <a href="profil.php" class="btn btn-outline-secondary btn-sm flex-fill"style="border-radius:30px;">
+              <a href="profil.php" class="btn btn-outline-secondary btn-sm flex-fill" style="border-radius:30px;">
                 Annuler
               </a>
             </div>
