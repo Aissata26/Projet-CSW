@@ -1,6 +1,6 @@
 <?php 
 include_once '../Visiteur/header.php';
-include_once '../Client/nav1.php';
+include_once 'nav1.php';
 ?>
 <body class="background-A">
 
@@ -28,7 +28,7 @@ include_once '../Client/nav1.php';
                     <strong>Date :</strong> 15 mars 2025
                 </p>
                 <p class="mb-0">
-                    <strong>Heure de début :</strong> 09:00
+                    <strong>Heure du déménagement :</strong> 09:00
                 </p>
             </div>
             <div class="row mb-4">
