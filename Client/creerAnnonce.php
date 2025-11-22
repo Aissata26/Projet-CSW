@@ -17,7 +17,7 @@ verf1();
 
         <div class="form-box-content">
 
-        <form method="POST" action="../fonction.php">
+        <form method="POST" action="../fonction.php" enctype="multipart/form-data">
 
           <div id="carouselExample" class="carousel slide carousel-fade">
 
@@ -89,11 +89,8 @@ verf1();
                       <input type="time" class="form-control padding" name="hd">
                     </div>
                   </div>
-                  <div>
-                    <button type="button" id="suivant1" class="btn btn-primary">Enregister</button>
-                 </div>
                   <div class="d-flex justify-content-end mt-4">
-                    <button type="button" class="btn btn-primary" id ="suivant11"name="suivant1" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <button type="button" class="btn btn-primary" id ="suivant1"name="suivant1" data-bs-target="" data-bs-slide="next">
                       Suivant
                     </button>
                   </div>
@@ -136,7 +133,7 @@ verf1();
 
                     <div class="col-6 col-md-3">
                       <label class="form-label">Ascenseur</label>
-                      <select class="form-select" name="ad2">
+                      <select class="form-select" name="asd">
                         <option value="">—</option>
                         <option>Oui</option>
                         <option>Non</option>
@@ -181,13 +178,9 @@ verf1();
                       </select>
                     </div>
                   </div>
-                  <div>
-                    <button type="button" id="suivant2" class="btn btn-primary">Enregister</button>
-                 </div>
-
                   <div class="d-flex justify-content-between mt-4">
                     <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExample" data-bs-slide="prev">Précédent</button>
-                    <button type="submit" class="btn btn-primary" name="suivant2" data-bs-target="#carouselExample" data-bs-slide="next">Suivant</button>
+                    <button type="button" class="btn btn-primary" name="suivant2" id="suivant2" data-bs-target="" data-bs-slide="next">Suivant</button>
                   </div>
 
                 </div>
@@ -206,26 +199,22 @@ verf1();
 
                   <div class="mb-3">
                     <label class="form-label">Objets principaux</label>
-                    <textarea class="form-control" rows="4" placeholder="lit, canapé, frigo..."></textarea>
+                    <textarea class="form-control"id="op" rows="4" placeholder="lit, canapé, frigo..."></textarea>
                   </div>
 
                   <div class="mb-3">
                     <label class="form-label">Photos</label>
-                    <input type="file" class="form-control" multiple>
+                    <input type="file" class="form-control" name="photo[]" id="photo" multiple>
                   </div>
-                  <div>
-                    <button type="button" id="suivant3" class="btn btn-primary">Enregister</button>
-                 </div>
-
                   <div class="d-flex justify-content-between mt-4">
                     <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExample" data-bs-slide="prev">Précédent</button>
-                    <button type="button" class="btn btn-primary" data-bs-target="#carouselExample" data-bs-slide="next">Suivant</button>
+                    <button type="button" class="btn btn-primary" data-bs-target="" id="suivant3" data-bs-slide="next">Suivant</button>
                   </div>
 
                 </div>
               </div>
 
-              <div class="carousel-item">
+              <div class="carousel-item ">
                 <div class="container my-5">
 
                   <div class="mb-4 p-3 border rounded bg-white">
@@ -233,47 +222,12 @@ verf1();
                       <h5 class="mb-0">Informations générales</h5>
                       <button type="button" class="btn btn-sm btn-outline-primary goToSlide" data-target="0">Modifier</button>
                     </div>
-
-                    <p><strong>Titre :</strong> —</p>
-                    <p><strong>Description :</strong> —</p>
-                    <p><strong>Nombre de déménageurs :</strong> —</p>
-                    <p><strong>Date :</strong> —</p>
-                    <p><strong>Heure :</strong> —</p>
+                    <span id="message3">  
+                    </span>
                   </div>
 
                   <div class="mb-4">
-                    <div class="row">
-
-                      <div class="col-12 col-md-6 mb-3 mb-md-0">
-                        <div class="p-3 border rounded bg-white h-100">
-                          <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h5 class="mb-0">Départ</h5>
-                            <button type="button" class="btn btn-sm btn-outline-primary goToSlide" data-target="1">Modifier</button>
-                          </div>
-
-                          <p><strong>Ville :</strong> —</p>
-                          <p><strong>Adresse :</strong> —</p>
-                          <p><strong>Type :</strong> —</p>
-                          <p><strong>Étage :</strong> —</p>
-                          <p><strong>Ascenseur :</strong> —</p>
-                        </div>
-                      </div>
-
-                      <div class="col-12 col-md-6">
-                        <div class="p-3 border rounded bg-white h-100">
-                          <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h5 class="mb-0">Arrivée</h5>
-                            <button type="button" class="btn btn-sm btn-outline-primary goToSlide" data-target="1">Modifier</button>
-                          </div>
-
-                          <p><strong>Ville :</strong> —</p>
-                          <p><strong>Adresse :</strong> —</p>
-                          <p><strong>Type :</strong> —</p>
-                          <p><strong>Étage :</strong> —</p>
-                          <p><strong>Ascenseur :</strong> —</p>
-                        </div>
-                      </div>
-
+                    <div class="row" id="message4">
                     </div>
                   </div>
 
@@ -282,10 +236,8 @@ verf1();
                       <h5 class="mb-0">Volume & objets</h5>
                       <button type="button" class="btn btn-sm btn-outline-primary goToSlide" data-target="2">Modifier</button>
                     </div>
-
-                    <p><strong>Volume :</strong> —</p>
-                    <p><strong>Objets :</strong> —</p>
-                    <p><strong>Photos :</strong> —</p>
+                    <span id="message5">
+                    </span>
                   </div>
 
                   <div class="d-flex justify-content-between mt-4">
@@ -352,13 +304,14 @@ document.querySelectorAll('.goToSlide').forEach(btn => {
 <script>
   let bouton=document.getElementById("suivant1");
   bouton.addEventListener("click",function()
-{
+{   let cmpt=0;
     let variable = document.querySelectorAll("#slide1 input");
     let variable1 = document.querySelectorAll("#slide1 textarea");
      for(let i=0 ; i< variable.length; i++)
      {
       if(variable[i].value ==="")
       {
+        cmpt=1;
         let parentElement=document.getElementById("message");
         let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
         
@@ -366,41 +319,52 @@ document.querySelectorAll('.goToSlide').forEach(btn => {
          break;
 
       }
-      else
-      {
-        let titreannonce=variable[i].value;
-
-      }
-     
+      
      }
+     let titreannonce=variable[0].value;
+     let nombredemenagement=variable[1].value;
+     let Date=variable[2].value;
+     let heur=variable[3].value;
      for(let i=0 ; i< variable1.length; i++)
      {
       if(variable1[i].value ==="")
       {
         let parentElement=document.getElementById("message");
         let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
-        
+        cmpt=1;
         parentElement.innerHTML=p;
          break;
 
       }
-      else
-      {
-        let titreannonce=variable[i].value;
-
-      }
      
      }
+     
+     let desc_rap=variable1[0].value;
+     if(cmpt === 0)
+      {
+         bouton.setAttribute("data-bs-target","carouselExample")
+         const c = bootstrap.Carousel.getOrCreateInstance(carousel);
+          c.next();
+      }
+     let parentElement1=document.getElementById("message3");
+          let p1= `<p><strong>Titre :</strong>${titreannonce}</p>
+                      <p><strong>Description :</strong>${desc_rap}</p>
+                      <p><strong>Nombre de déménageurs :</strong>${nombredemenagement}</p>
+                      <p><strong>Date :</strong>${Date}</p>
+                      <p><strong>Heure :</strong>${heur}</p>`;
+                      parentElement1.innerHTML=p1;
 
 })
 let bouton1=document.getElementById("suivant2");
   bouton1.addEventListener("click",function()
-{
+{   
+    let cmpt=0;
     let variable = document.querySelectorAll("#slide2 input");
      for(let i=0 ; i< variable.length; i++)
      {
       if(variable[i].value ==="")
       {
+        cmpt=1;
         let parentElement=document.getElementById("message1");
         let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
         
@@ -410,17 +374,13 @@ let bouton1=document.getElementById("suivant2");
       }
      
      }
-
-})
-let bouton2=document.getElementById("suivant3");
-  bouton2.addEventListener("click",function()
-{
-    let variable = document.querySelectorAll("#slide3 input");
-     for(let i=0 ; i< variable.length; i++)
+     let variable1 = document.querySelectorAll("#slide2 select");
+     for(let i=0 ; i< variable1.length; i++)
      {
-      if(variable[i].value ==="")
+      if(variable1[i].value ==="")
       {
-        let parentElement=document.getElementById("message2");
+        cmpt=1;
+        let parentElement=document.getElementById("message1");
         let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
         
         parentElement.innerHTML=p;
@@ -429,12 +389,134 @@ let bouton2=document.getElementById("suivant3");
       }
      
      }
+     let vd=variable[0].value;
+     let ad=variable[1].value;
+     let td=variable1[0].value;
+     let ed=variable[2].value;
+     let asd=variable1[1].value;
+     let va=variable[3].value;
+     let aa=variable[4].value;
+     let ta=variable1[2].value;
+     let ea=variable[5].value;
+     let asa=variable1[3].value;
+     let parentElement1=document.getElementById("message4");
+     let p1= `<div class="col-12 col-md-6 mb-3 mb-md-0">
+                        <div class="p-3 border rounded bg-white h-100">
+                          <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0">Départ</h5>
+                            <button type="button" class="btn btn-sm btn-outline-primary goToSlide" data-target="1">Modifier</button>
+                          </div>
+                          <span >
+                          <p><strong>Ville :</strong>${vd}</p>
+                          <p><strong>Adresse :</strong>${ad}</p>
+                          <p><strong>Type :</strong>${td}</p>
+                          <p><strong>Étage :</strong>${ed}</p>
+                          <p><strong>Ascenseur :</strong>${asd}</p>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                        <div class="p-3 border rounded bg-white h-100">
+                          <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0">Arrivée</h5>
+                            <button type="button" class="btn btn-sm btn-outline-primary goToSlide" data-target="1">Modifier</button>
+                          </div>
+
+                          <p><strong>Ville :</strong>${va}</p>
+                          <p><strong>Adresse :</strong>${aa}</p>
+                          <p><strong>Type :</strong>${ta}</p>
+                          <p><strong>Étage :</strong>${ea}</p>
+                          <p><strong>Ascenseur :</strong>${asa}</p>
+                        </div>
+                      </div>`;
+                      parentElement1.innerHTML=p1;
+     if(cmpt === 0)
+      {
+         bouton1.setAttribute("data-bs-target","carouselExample")
+         const c = bootstrap.Carousel.getOrCreateInstance(carousel);
+          c.next();
+      }
+
 
 })
+let bouton2=document.getElementById("suivant3");
+  bouton2.addEventListener("click",function()
+{
+    let cmpt=0;
+    let variable = document.querySelector("#slide3 input[type='number']");
+      if(variable.value ==="0")
+      {
+        cmpt=1;
+        let parentElement=document.getElementById("message2");
+        let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
+        
+        parentElement.innerHTML=p;
 
- 
+      }
+     let variable1 = document.querySelector("#slide3 textarea");
+      if(variable1.value ==="")
+      {
+        cmpt=1;
+        let parentElement=document.getElementById("message2");
+        let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
+        parentElement.innerHTML=p;
 
+      }
+      let variable2 = document.querySelector("#slide3 input[type='file']");
+      if(variable2.files.length ===0)
+      {
+        cmpt=1;
+        let parentElement=document.getElementById("message2");
+        let p='<p class="text-danger"> Veuillez Remplir tout les champs</p>';
+        
+        parentElement.innerHTML=p;
+
+      }
+      let v=variable.value;
+      let op=variable1.value;
+      let photo=variable2.files;
+      let parentElement1=document.getElementById("message5");
+      let p1=`<p><strong>Volume :</strong> ${v}</p>
+                      <p><strong>Objets :</strong> ${op}</p>
+                      <p><strong>Photos :</strong></p>
+                      <div id="carouselphoto" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">`;
+    for( let i=0;i<photo.length;i++)
+    {
+      let activeClass = (i === 0) ? 'active' : '';
+      let imgURL = URL.createObjectURL(photo[i]);
+      p1+=`
+    <div class="carousel-item ${activeClass}">
+      <img src="${imgURL}" class="d-block w-100" alt="photo ${i}">
+    </div>`;
+    }
+   p1+=`
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselphoto" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselphoto" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>`;
+parentElement1.innerHTML=p1;
+
+
+     if(cmpt === 0)
+      {
+         bouton2.setAttribute("data-bs-target","#carouselExample")
+         const c = bootstrap.Carousel.getOrCreateInstance(carousel);
+          c.next();
+
+          
+      
+      }
+
+})
 </script>
+
 
 </body>
 
