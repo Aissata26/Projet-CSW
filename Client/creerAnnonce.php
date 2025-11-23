@@ -1,8 +1,12 @@
 <?php 
 session_start();
-include_once '../Visiteur/header.php';
 include_once '../fonction.php';
+
+ 
+include_once '../Visiteur/header.php';
+
 include_once 'nav1.php';
+
 ?>
 
 <body class="background-A">
@@ -240,7 +244,7 @@ include_once 'nav1.php';
 
                   <div class="d-flex justify-content-between mt-4">
                     <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExample" data-bs-slide="prev">Précédent</button>
-                    <button type="submit" class="btn btn-success">Publier l’annonce</button>
+                    <button type="submit" class="btn btn-success"  name="publier">Publier l’annonce</button>
                   </div>
 
                 </div>
@@ -518,4 +522,5 @@ parentElement1.innerHTML=p1;
 
 </body>
 
-<?php include_once '../Visiteur/footer.php'; ?>
+<?php include_once '../Visiteur/footer.php'; 
+?>

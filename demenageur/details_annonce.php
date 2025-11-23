@@ -1,6 +1,21 @@
 <?php 
+session_start();
 include_once '../Visiteur/header.php';
 include_once 'nav1.php';
+echo $_SESSION['id_ann'];
+include_once '../fonction.php';
+$annonce=get_annonce();
+$an=null;
+foreach($annonce as $ann)
+{
+  if($ann['id']=$_SESSION['id_ann'])
+  {
+    $an=$ann;
+    
+    break;
+
+  }
+}
 ?>
 <body class="background-A">
 
@@ -23,47 +38,47 @@ include_once 'nav1.php';
             <div class="card-body">
 
               <h5 class="fw-bold mb-2 d-flex justify-content-between align-items-center">
-                <span>Déménagement Rouen → Paris</span>
+                <span><?php echo($an['titreannonce']);?></span>
                 <span class="badge bg-primary">Disponible</span>
               </h5>
 
               <p class="mb-2">
-                <strong>Date :</strong> 15 mars 2025
-                <span class="text-muted"> | Heure : 09h00</span>
+                <strong>Date :</strong> <?php echo($an['date_creation']);?>
+                <span class="text-muted"> | Heure : <?php echo($an['heur']);?></span>
               </p>
 
               <p class="mb-2">
-                <strong>Description :</strong> Appartement, meubles, électroménager, cartons…
+                <strong>Description :</strong> <?php echo($an['description']);?>
               </p>
 
               <p class="mb-3">
-                <strong>Nombre de déménageurs souhaités :</strong> 2
+                <strong>Nombre de déménageurs souhaités :</strong> <?php echo($an['nombrededemenagement']);?>
               </p>
 
               <hr class="my-3">
 
               <h6 class="fw-semibold mb-2">Départ</h6>
-              <p class="mb-1"><strong>Ville :</strong> Rouen</p>
-              <p class="mb-1"><strong>Adresse :</strong> 12 rue des Lilas</p>
-              <p class="mb-1"><strong>Type :</strong> Appartement</p>
-              <p class="mb-1"><strong>Étage :</strong> 3ᵉ</p>
-              <p class="mb-3"><strong>Ascenseur :</strong> Oui</p>
+              <p class="mb-1"><strong>Ville :</strong> <?php echo($an['ville_depart']);?></p>
+              <p class="mb-1"><strong>Adresse :</strong> <?php echo($an['adresse_depart']);?></p>
+              <p class="mb-1"><strong>Type :</strong> <?php echo($an['type_logement_depart']);?></p>
+              <p class="mb-1"><strong>Étage :</strong> <?php echo($an['etage_depart']);?>ᵉ</p>
+              <p class="mb-3"><strong>Ascenseur :</strong> <?php echo($an['Ascenseur_depart']);?></p>
 
               <hr class="my-3">
 
               <h6 class="fw-semibold mb-2">Arrivée</h6>
-              <p class="mb-1"><strong>Ville :</strong> Paris</p>
-              <p class="mb-1"><strong>Adresse :</strong> 5 avenue de la République</p>
-              <p class="mb-1"><strong>Type :</strong> Maison</p>
-              <p class="mb-1"><strong>Étage :</strong> RDC</p>
-              <p class="mb-3"><strong>Ascenseur :</strong> Non</p>
+              <p class="mb-1"><strong>Ville :</strong> <?php echo($an['ville_arrivee']);?></p>
+              <p class="mb-1"><strong>Adresse :</strong> <?php echo($an['address_arrivee']);?></p>
+              <p class="mb-1"><strong>Type :</strong> <?php echo($an['type_logement_arrivee']);?></p>
+              <p class="mb-1"><strong>Étage :</strong> <?php echo($an['etage_arrivee']);?></p>
+              <p class="mb-3"><strong>Ascenseur :</strong> <?php echo($an['ascenseur_arrivee']);?></p>
 
               <hr class="my-3">
 
               <h6 class="fw-semibold mb-2">Volume & objets</h6>
-              <p class="mb-1"><strong>Volume estimé :</strong> 12 m³</p>
+              <p class="mb-1"><strong>Volume estimé :</strong> <?php echo($an['volume']);?>m³</p>
               <p class="mb-0">
-                <strong>Objets principaux :</strong> lit, canapé, frigo, 20 cartons…
+                <strong>Objets principaux :</strong> <?php echo($an['objets_principaux']);?>
               </p>
 
             </div>
@@ -76,20 +91,20 @@ include_once 'nav1.php';
 
               <h5 class="fw-bold mb-3">Votre proposition</h5>
 
-              <form class="w-100 mb-3">
+              <form class="w-100 mb-3" action="../fonction.php" method="POST">
 
                 <div class="mb-3">
                   <label class="form-label">Montant proposé (€)</label>
-                  <input  type="number"  class="form-control" placeholder="Ex : 280">
+                  <input  type="number" name="prix"  class="form-control" placeholder="Ex : 280">
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">Message pour le client</label>
-                  <textarea class="form-control" rows="3" splaceholder="Ex : Je viens avec un camion 20 m³ et deux déménageurs."></textarea>
+                  <textarea class="form-control" name="message" rows="3" splaceholder="Ex : Je viens avec un camion 20 m³ et deux déménageurs."></textarea>
                 </div>
 
                 <div class="d-flex flex-column flex-md-row gap-2 mt-3">
-                  <button type="button" class="btn btn-primary btn-sm flex-fill">
+                  <button type="submit" name="proposition"class="btn btn-primary btn-sm flex-fill">
                     Envoyer la proposition
                   </button>
                 </div>

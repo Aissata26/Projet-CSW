@@ -2,7 +2,7 @@
 include_once '../Visiteur/header.php';
 include_once 'nav.php';
 include_once '../fonction.php';
-$annonce=get_annonce();
+$annonce=get_annonces();
 
 ?>
 <body class="background-A">
