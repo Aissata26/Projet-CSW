@@ -147,7 +147,19 @@ function traitement_ins()
 
   }
 }
+function get_annonce()
+{
+  $annonces=get_annonce();
 
+foreach($annonces as $annonce)
+          {
+            if($annonce['id_client']===$_SESSION['id'])
+            {
+                 $annoncee=$annonce;   
+            }
+          }
+          return $annoncee;
+}
 if(isset($_POST['publier']))
 {
   $idclient          = $_SESSION['id'];
