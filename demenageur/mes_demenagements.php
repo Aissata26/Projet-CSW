@@ -1,6 +1,8 @@
 <?php 
+session_start();
 include_once '../Visiteur/header.php';
 include_once 'nav1.php';
+include_once '../fonction.php';
 ?>
 <body class="background-A">
 
@@ -9,6 +11,7 @@ include_once 'nav1.php';
   <div class="row">
     <h2 class="text-center text-light py-4">MES DÉMÉNAGEMENTS</h2>
   </div>
+  <?php if(isset($_SESSION['proposition'])){?>
 
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-9">
@@ -56,6 +59,7 @@ include_once 'nav1.php';
 
     </div>
   </div>
+  <?php }?>
 
 </main>
 
