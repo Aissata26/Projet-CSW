@@ -3,8 +3,6 @@ session_start();
 include_once '../Visiteur/header.php';
 include_once '../fonction.php';
 include_once 'nav1.php';
-verf();
-verf1();
 ?>
 
 <body class="background-A">
@@ -156,7 +154,7 @@ verf1();
                   <div class="row g-2">
                     <div class="col-12 col-md-6">
                       <label class="form-label">Type de logement</label>
-                      <select class="form-select" name="ta">
+                      <select class="form-select" name="tla">
                         <option value="">Choisir…</option>
                         <option>Appartement</option>
                         <option>Maison</option>
@@ -194,12 +192,12 @@ verf1();
 
                   <div class="mb-3">
                     <label class="form-label">Volume estimé (m³)</label>
-                    <input type="number" class="form-control" id="volume" min="0" step="0.5" placeholder="12">
+                    <input type="number" class="form-control" id="volume" name='volume' min="0" step="0.5" placeholder="12">
                   </div>
 
                   <div class="mb-3">
                     <label class="form-label">Objets principaux</label>
-                    <textarea class="form-control"id="op" rows="4" placeholder="lit, canapé, frigo..."></textarea>
+                    <textarea class="form-control"id="op" name="op" rows="4" placeholder="lit, canapé, frigo..."></textarea>
                   </div>
 
                   <div class="mb-3">
