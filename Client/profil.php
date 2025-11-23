@@ -1,6 +1,7 @@
 <?php 
 include_once '../Visiteur/header.php';
 include_once 'nav1.php';
+$utilisateur=get_utilisateure();
 ?>
 <body class="background-A">
 
@@ -18,13 +19,13 @@ include_once 'nav1.php';
             <div class="mb-2">
               <p class="mb-1 text-uppercase"
                  style="font-size:0.7rem;letter-spacing:1px;opacity:0.8;">
-                Profil MOVE<span class="titre-color">UP</span> – Client
+                Profil MOVE<span class="titre-color">UP</span> – <?php echo $utilisateur['role'];?>
               </p>
               <h2 class="mb-0 fw-bold" style="font-size:1.5rem;">
-                Aissata Diallo
+                <?php echo $utilisateur['prenom'];?> <?php echo $utilisateur['nom'];?>
               </h2>
               <p class="mb-1" style="font-size:0.9rem;opacity:0.9;">
-                aissata@example.com
+                <?php echo $utilisateur['email'];?>
               </p>
             </div>
 
@@ -46,32 +47,32 @@ include_once 'nav1.php';
 
           <div class="mb-3">
             <span class="text-muted small d-block">Nom</span>
-            <span class="fw-semibold">DIALLO</span>
+            <span class="fw-semibold"><?php echo $utilisateur['nom'];?></span>
           </div>
 
           <div class="mb-3">
             <span class="text-muted small d-block">Prénom</span>
-            <span class="fw-semibold">Aissata</span>
+            <span class="fw-semibold"><?php echo $utilisateur['prenom'];?></span>
           </div>
 
           <div class="mb-3">
             <span class="text-muted small d-block">Date de naissance</span>
-            <span class="fw-semibold">01/01/2000</span>
+            <span class="fw-semibold"><?php echo $utilisateur['dateanniverssaire'];?></span>
           </div>
 
           <div class="mb-3">
             <span class="text-muted small d-block">Adresse email</span>
-            <span class="fw-semibold">aissata@example.com</span>
+            <span class="fw-semibold"><?php echo $utilisateur['email'];?></span>
           </div>
 
           <div class="mb-3">
             <span class="text-muted small d-block">Catégorie</span>
-            <span class="fw-semibold">Client</span>
+            <span class="fw-semibold"><?php echo $utilisateur['role'];?></span>
           </div>
 
           <div class="mb-4">
             <span class="text-muted small d-block">Téléphone</span>
-            <span class="fw-semibold">06 00 00 00 00</span>
+            <span class="fw-semibold"><?php echo $utilisateur['role'];?></span>
           </div>
 
           <hr class="my-4">

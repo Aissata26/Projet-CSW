@@ -32,23 +32,58 @@ function get_annonce()
     $annonce=$annonceStatement->fetchAll();
     return $annonce;
 }
+
+function get_photos()
+{
+    global $pdo;
+    $photoStatement = $pdo->prepare('select * from photo');
+    $photoStatement->execute();
+    $photo=$photoStatement->fetchAll();
+    return $photo;
+}
 function add_utilisateur($nom,$prenom,$email,$chiffrement,$categorie,$telephone,$anniversaire)
 {
   global $pdo;
   $utilisateurStatement=$pdo->prepare("INSERT INTO `utilisateur` (`nom`, `prenom`, `email`, `motdepasse`, `role`, `telephone`, `dateanniverssaire`) VALUES (:nom, :prenom, :email, :chiffrement, :categorie, :telephone, :anniverssaire);");
   $utilisateurStatement->execute(['nom'=>$nom,'prenom'=>$prenom,'email'=>$email,'chiffrement'=>$chiffrement,'categorie'=>$categorie,'telephone'=>$telephone,'anniverssaire'=>$anniversaire]);
 }
+function add_proposition($idannonce,$iddemenageur,$prix,$message)
+{
+  global $pdo;
+  $propositionStatement=$pdo->prepare("INSERT INTO `proposition` (`id_annonce`, `id_demenageur`, `prix`, `message`) VALUES (:id_annonce, :id_demenageur, :prix, :message);");
+  $propositionStatement->execute(['id_annonce'=>$idannonce,'id_demenageur'=>$iddemenageur,'prix'=>$prix,'message'=>$message]);
+  if ($propositionStatement->errorCode() !== "00000") {
+    echo "<pre>";
+    print_r($propositionStatement->errorInfo());
+    echo "</pre>";
+    exit();
+}
+}
 function add_annonce($idclient, $date, $ville_depart, $ville_arrivee, $volume, $titreannonce, $description, $nb_demenageurs, $heure, $adresse_depart, $type_depart, $etage_depart, $ascenseur_depart, $adresse_arrivee, $type_arrivee, $etage_arrivee, $ascenseur_arrivee, $objets, $date_creation) 
 {
   global $pdo;
   $utilisateurStatement = $pdo->prepare("INSERT INTO `annonce` (`id_client`, `date_demenagement`, `ville_depart`, `ville_arrivee`, `volume`, `titreannonce`, `description`, `nombrededemenagement`, `heur`, `adresse_depart`, `type_logement_depart`, `etage_depart`, `Ascenseur_depart`, `address_arrivee`, `type_logement_arrivee`, `etage_arrivee`, `ascenseur_arrivee`, `objets_principaux`, `date_creation`) VALUES (:id_client, :date_demenagement, :ville_depart, :ville_arrivee, :volume, :titreannonce, :description, :nombrededemenagement, :heur, :adresse_depart, :type_logement_depart, :etage_depart, :Ascenseur_depart, :address_arrivee, :type_logement_arrivee, :etage_arrivee, :ascenseur_arrivee, :objets_principaux, :date_creation);");
   $utilisateurStatement->execute(['id_client'=>$idclient, 'date_demenagement'=>$date, 'ville_depart'=>$ville_depart, 'ville_arrivee'=>$ville_arrivee, 'volume'=>$volume, 'titreannonce'=>$titreannonce, 'description'=>$description, 'nombrededemenagement'=>$nb_demenageurs, 'heur'=>$heure, 'adresse_depart'=>$adresse_depart, 'type_logement_depart'=>$type_depart, 'etage_depart'=>$etage_depart, 'Ascenseur_depart'=>$ascenseur_depart, 'address_arrivee'=>$adresse_arrivee, 'type_logement_arrivee'=>$type_arrivee, 'etage_arrivee'=>$etage_arrivee, 'ascenseur_arrivee'=>$ascenseur_arrivee, 'objets_principaux'=>$objets, 'date_creation'=>$date_creation]);
+if ($utilisateurStatement->errorCode() !== "00000") {
+    echo "<pre>";
+    print_r($utilisateurStatement->errorInfo());
+    echo "</pre>";
+    exit();
 }
+}
+
+
 function add_photo($id_annonce, $url)
 {
   global $pdo;
-  $photoStatement = $pdo->prepare("INSERT INTO `photos` (`id_annonce`, `url`) VALUES (:id_annonce, :url);");
+  $photoStatement = $pdo->prepare("INSERT INTO `photo` (`id_annonce`, `url`) VALUES (:id_annonce, :url);");
   $photoStatement->execute(['id_annonce'=>$id_annonce,'url'=>$url]);
+  if ($photoStatement->errorCode() !== "00000") {
+    echo "<pre>";
+    print_r($photoStatement->errorInfo());
+    echo "</pre>";
+    exit();
+}
 }
 
 
@@ -74,8 +109,16 @@ function traitement_con()
               if(password_verify($_POST['password'],$utilisateur['motdepasse']))
               {
                 unset($_SESSION['erreur']);
+                $_SESSION['id']=$utilisateur['id'];
+                if($utilisateur['role']==='Client')
+                {
                header("location: Client/client.php");
-               $_SESSION['id']=$utilisateur['id'];
+                }
+                else
+                {
+                  header("location: demenageur/annonces_disponibles.php");
+                }
+               
                exit();
               }
               else
@@ -127,6 +170,7 @@ function traitement_ins()
         add_utilisateur($nom,$prenom,$email,$chiffrement,$categorie,$telephone,$anniversaire);
         $_SESSION['success']="réussis";
         header("location: Visiteur/index.php");
+        exit();
         
 
        
@@ -147,15 +191,34 @@ function traitement_ins()
 
   }
 }
-function get_annonce()
+function get_utilisateure()
+{
+  $utilisateurs=get_utilisateur();
+  $utilisateure=null;
+
+foreach($utilisateurs as $utilisateur)
+          {
+            if($utilisateur['id']===$_SESSION['id'])
+            {
+                 $utilisateure=$utilisateur;  
+
+                 break;
+            }
+          }
+          return $utilisateure;
+}
+function get_annonces()
 {
   $annonces=get_annonce();
+  $annoncee=null;
 
 foreach($annonces as $annonce)
           {
             if($annonce['id_client']===$_SESSION['id'])
             {
-                 $annoncee=$annonce;   
+                 $annoncee=$annonce;  
+                 $_SESSION['id_annonce']=$annoncee['id']; 
+                 break;
             }
           }
           return $annoncee;
@@ -204,6 +267,39 @@ foreach($annonces as $annonce)
       exit();
 
 }
+function get_photo()
+{
+    $photos = get_photos();
+    $result = [];
 
+    foreach ($photos as $photo) {
+        if ($photo['id_annonce'] == $_SESSION['id_annonce']) {
+            $result[] = $photo;
+        }
+    }
+
+    return $result;
+}
+if(isset($_POST['proposition']))
+{ $idannonce=$_SESSION['id_ann'];
+  $iddemenageur=$_SESSION['id'];
+  $prix=$_POST['prix'];
+  $message=$_POST['message'];
+
+  add_proposition($idannonce,$iddemenageur,$prix,$message);
+  unset($_SESSION['id_ann']);
+    header("location: demenageur/annonces_disponibles.php");
+      exit();
+
+
+}
+  if(isset($_POST['connexion']))
+      {
+        traitement_con();
+      }
+  elseif(isset($_POST['inscription']))
+  {
+    traitement_ins();
+  }
 
 ?>
