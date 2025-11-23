@@ -1,6 +1,9 @@
 <?php 
 include_once '../Visiteur/header.php';
 include_once 'nav.php';
+include_once '../fonction.php';
+$annonce=get_annonce();
+
 ?>
 <body class="background-A">
   <main class="container py-4">
@@ -12,21 +15,21 @@ include_once 'nav.php';
       <div class="card-body">
 
         <h5 class="card-title fw-bold mb-2 d-flex justify-content-between align-items-center">
-          <span>Déménagement Rouen → Paris</span>
+          <span><?php echo($annonce['titreannonce']);?></span>
           <span class="badge bg-primary">En ligne</span>
         </h5>
         <p class="card-text mb-2">
-          <strong>Date :</strong> 15 mars 2025
-          <span class="text-muted"> | Heure : 09h00</span>
+          <strong>Date :</strong> <?php echo($annonce['date_creation']);?>
+          <span class="text-muted"> | Heure : <?php echo($annonce['heur']);?></span>
         </p>
         <p class="card-text mb-1">
-          <strong>Départ :</strong> Appartement, 3ᵉ étage, avec ascenseur – Rouen
+          <strong>Départ :</strong> <?php echo($annonce['ville_depart']);?>
         </p>
         <p class="card-text mb-1">
-          <strong>Arrivée :</strong> Maison, RDC – Paris
+          <strong>Arrivée :</strong> <?php echo($annonce['ville_arrivee']);?>
         </p>
         <p class="card-text mb-2">
-          <strong>Volume estimé :</strong> 12 m³
+          <strong>Volume estimé :</strong> <?php echo($annonce['volume']);?>
         </p>
 
         <p class="mb-0">
