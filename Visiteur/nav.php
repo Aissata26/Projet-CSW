@@ -107,8 +107,8 @@ include_once '../fonction.php';
             <label for="catégorie" class="form-label text-light fs-5 ">Catégorie</label>
             <select class="form-select" aria-label="Default select example" name="categorie">
               <option>---</option>
-              <option value="1" <?php if(isset($_SESSION['categorie'])){if($_SESSION['categorie']==='1'){echo 'selected';}}?>>Client</option>
-              <option value="2" <?php if(isset($_SESSION['categorie'])){if($_SESSION['categorie']==='2'){echo 'selected';}}?>>Déménageur</option>
+              <option value="1">Client</option>
+              <option value="2" >Déménageur</option>
             </select>
           </div>
           <div class="mb-3 text-start">
