@@ -104,7 +104,7 @@ foreach($annonce as $ann)
                 </div>
 
                 <div class="d-flex flex-column flex-md-row gap-2 mt-3">
-                  <button type="submit" name="proposition"class="btn btn-primary btn-sm flex-fill">
+                  <button type="submit" id="proposition"name="proposition"class="btn btn-primary btn-sm flex-fill">
                     Envoyer la proposition
                   </button>
                 </div>
@@ -132,6 +132,9 @@ foreach($annonce as $ann)
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let var=document.getElementById('')
+</script>
 
 </body>
 

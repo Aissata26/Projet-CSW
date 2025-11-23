@@ -31,6 +31,14 @@ function get_annonce()
     $annonce=$annonceStatement->fetchAll();
     return $annonce;
 }
+function get_proposition()
+{
+    global $pdo;
+    $propositionStatement = $pdo->prepare('select * from proposition');
+    $propositionStatement->execute();
+    $proposition=$propositionStatement->fetchAll();
+    return $proposition;
+}
 
 function get_photos()
 {
