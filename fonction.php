@@ -6,7 +6,7 @@ include_once 'Visiteur/header.php';
 $script;
     try
     {
-        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","");
+        $pdo= new PDO("mysql:host=localhost;dbname=tableaux","root","root");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 
     }
