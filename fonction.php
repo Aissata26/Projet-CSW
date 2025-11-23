@@ -163,14 +163,8 @@ function traitement_ins()
         $prenom=strip_tags($_POST['prenom']);
         $anniversaire=strip_tags($_POST['anniverssaire']);
         $email=strip_tags($_POST['email']);
-        if(strip_tags($_POST['categorie'])===1)
-        {
-          $categorie="Client";
-        }
-        else
-        {
-          $categorie="Déménageur";
-        }
+          $categorie=strip_tags($_POST['categorie']);
+
         $motdepasse=strip_tags($_POST['motdepasse']);
         $telephone=strip_tags($_POST['telephone']);
         $chiffrement=password_hash($motdepasse,PASSWORD_BCRYPT);
